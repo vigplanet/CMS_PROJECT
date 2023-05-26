@@ -42,7 +42,7 @@
                                             <label class="control-label">GENDER  </label>
                                             <asp:RadioButtonList ID="rdogender" runat="server" RepeatDirection="Horizontal">
                                                 <asp:ListItem Selected="True">MALE</asp:ListItem>
-                                                <asp:ListItem>FEMALE	</asp:ListItem>
+                                                <asp:ListItem>FEMALE</asp:ListItem>
                                             </asp:RadioButtonList>
                                         </div>
                                     </div>
