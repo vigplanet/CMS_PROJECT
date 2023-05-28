@@ -800,5 +800,56 @@ namespace TechOnStudy_CMS
             string result = ExecNonQueryProc("set_orderbilling", arrList.ToArray());
             return result;
         }
+
+        public string InsertStudentData(long ID, string CANDIDATENAME,
+    DateTime DATEOFBIRTH,
+    string GENDER,
+    string CATEGORY,
+    string EMAILID,
+    string CONTACTNO,
+    int ISHANDICAPPED,
+    string FATHERSNAME,
+    string OCCUPATION,
+    string MOBILENO,
+    string PA_LINE,
+    string PA_CITY_TOWN,
+    string PA_STATE,
+    string PA_DISTRICT,
+    string PA_PINCODE,
+    string CA_LINE,
+    string CA_CITY_TOWN,
+    string CA_STATE,
+    string CA_DISTRICT,
+    string CA_PINCODE,
+    int SESSION,
+    int CENTRE,
+    int COURSE,
+    int BATCH_TYPE,
+    int EXAM,
+    int C_STREAM,
+    int BATCH,
+    int QUALIFICATION,
+    int E_STREAM,
+    int NAME_OF_COLLEGE,
+    int ED_CITY,
+    int PASSING_YEAR,
+    decimal MARKS_PER,
+    string OPTIONAL_SUBJECT_CSE,
+    string PHOTOS,
+    string SIGNATURE,
+    string IDPROOF,
+    int IS_AGREE,
+    DateTime CreatedDatetime,
+   string CreatedIpAddress,
+     int Status)
+        {
+            ArrayList arrList = new ArrayList();
+            arrList.Add(PrepareCommand("@Productid", 0, SqlDbType.Int, 0, ParameterDirection.Input));
+            //  string result = ExecNonQueryProc("SPProductMaster", arrList.ToArray());
+            DataTable dd = ExecDataTableProc("SPProductMaster", arrList.ToArray());
+            return dd.Rows[0][0].ToString();
+            //return result;
+        }
+
     }
 }

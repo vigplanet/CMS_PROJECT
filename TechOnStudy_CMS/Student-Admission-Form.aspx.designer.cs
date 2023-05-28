@@ -15,6 +15,15 @@ namespace TechOnStudy_CMS
     {
 
         /// <summary>
+        /// updatepnl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updatepnl;
+
+        /// <summary>
         /// txtcandidatename control.
         /// </summary>
         /// <remarks>
@@ -22,15 +31,6 @@ namespace TechOnStudy_CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcandidatename;
-
-        /// <summary>
-        /// minMaxExample control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox minMaxExample;
 
         /// <summary>
         /// rdogender control.
@@ -49,6 +49,15 @@ namespace TechOnStudy_CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlcategory;
+
+        /// <summary>
+        /// chk_handicapped control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chk_handicapped;
 
         /// <summary>
         /// txtemaiid control.
@@ -78,13 +87,13 @@ namespace TechOnStudy_CMS
         protected global::System.Web.UI.WebControls.TextBox txtcontactno;
 
         /// <summary>
-        /// chk_handicapped control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_handicapped;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
         /// txtfathername control.
@@ -105,24 +114,6 @@ namespace TechOnStudy_CMS
         protected global::System.Web.UI.WebControls.TextBox txtOCCUPATION;
 
         /// <summary>
-        /// txtmobileno control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmobileno;
-
-        /// <summary>
-        /// txtmothername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmothername;
-
-        /// <summary>
         /// txtmother_OCCUPATION control.
         /// </summary>
         /// <remarks>
@@ -130,15 +121,6 @@ namespace TechOnStudy_CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmother_OCCUPATION;
-
-        /// <summary>
-        /// txtmother_mobile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmother_mobile;
 
         /// <summary>
         /// txtPERMANENT_ADDRESS control.
@@ -276,15 +258,6 @@ namespace TechOnStudy_CMS
         protected global::System.Web.UI.WebControls.DropDownList ddl_batch;
 
         /// <summary>
-        /// ddlexam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlexam;
-
-        /// <summary>
         /// ddlstream control.
         /// </summary>
         /// <remarks>
@@ -292,15 +265,6 @@ namespace TechOnStudy_CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlstream;
-
-        /// <summary>
-        /// ddl_batch2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_batch2;
 
         /// <summary>
         /// ddl_qualification control.
@@ -391,5 +355,23 @@ namespace TechOnStudy_CMS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

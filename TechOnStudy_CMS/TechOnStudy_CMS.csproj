@@ -2491,6 +2491,7 @@
     </Compile>
     <Compile Include="Code\BusinessLogicLayer.cs" />
     <Compile Include="Code\DataAccessLayer.cs" />
+    <Compile Include="Code\DBClass.cs" />
     <Compile Include="Code\Email.cs" />
     <Compile Include="Code\Encryption64.cs" />
     <Compile Include="Code\MailSender.cs" />

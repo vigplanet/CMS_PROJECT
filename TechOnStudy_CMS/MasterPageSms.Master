@@ -56,6 +56,8 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <form runat="server">
+        <asp:ScriptManager ID="scriptmanager1" runat="server">
+        </asp:ScriptManager>
         <!--preloader-->
         <div id="preloader">
             <div id="status"></div>
@@ -63,12 +65,12 @@
         <!-- Site wrapper -->
         <div class="wrapper">
             <header class="main-header">
-                 
+
                 <!-- Header Navbar -->
                 <nav class="navbar navbar-expand py-0">
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                         <!-- Sidebar toggle button-->
-                       <img src="assets/Untitled-1.png"  width="300" height="80"   alt="user" />
+                        <img src="assets/Untitled-1.png" width="300" height="80" alt="user" />
                     </a>
                     <!-- searchbar-->
 
@@ -91,7 +93,7 @@
                     </div>
                 </nav>
             </header>
-             
+
 
             <%-- <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
