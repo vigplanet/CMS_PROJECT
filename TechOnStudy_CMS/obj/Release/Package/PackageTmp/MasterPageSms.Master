@@ -67,7 +67,7 @@
             <header class="main-header">
 
                 <!-- Header Navbar -->
-                <nav class="navbar navbar-expand py-0">
+                <nav class="navbar navbar-expand ml-0 py-0">
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                         <!-- Sidebar toggle button-->
                         <img src="assets/Untitled-1.png" width="300" height="80" alt="user" />
@@ -80,14 +80,11 @@
 
                             <!-- User -->
                             <li class="nav-item dropdown dropdown-user">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/dist/img/avatar5.png" class="rounded-circle" width="50" height="50" alt="user" /></a>
-
-                                <div class="dropdown-menu drop_down">
-                                    <div class="menus">
-                                        <a class="dropdown-item" href="../logout.aspx"><i class="fa fa-sign-out"></i>Signout</a>
+ <div class="menus" style="color:wheat;">
+                                     Contact Us : +91-9782961560 
                                     </div>
-                                </div>
+
+                               
                             </li>
                         </ul>
                     </div>
@@ -104,7 +101,7 @@
             <%--</ContentTemplate>
             </asp:UpdatePanel>--%>
 
-            <footer class="main-footer">
+            <footer class="main-footer ml-0">
                 <strong>Copyright &copy; 2019-2020<a href="#">Vigplanet</a>.</strong> All rights reserved.        
             </footer>
         </div>

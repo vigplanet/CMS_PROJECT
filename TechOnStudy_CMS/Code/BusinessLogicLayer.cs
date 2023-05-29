@@ -845,8 +845,8 @@ namespace TechOnStudy_CMS
         {
             ArrayList arrList = new ArrayList();
             arrList.Add(PrepareCommand("@Productid", 0, SqlDbType.Int, 0, ParameterDirection.Input));
-            //  string result = ExecNonQueryProc("SPProductMaster", arrList.ToArray());
-            DataTable dd = ExecDataTableProc("SPProductMaster", arrList.ToArray());
+           
+            DataTable dd = ExecDataTableProc("img_photo", arrList.ToArray());
             return dd.Rows[0][0].ToString();
             //return result;
         }

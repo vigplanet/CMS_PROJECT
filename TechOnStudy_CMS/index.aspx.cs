@@ -12,6 +12,7 @@ namespace TechOnStudy_CMS
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.Redirect("Student-Admission-Form.aspx");
+           // Response.Redirect("WebForm1.aspx");
         }
     }
 }

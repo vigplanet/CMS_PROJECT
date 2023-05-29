@@ -252,7 +252,7 @@ body.hold-transition .main-header .logo {
     margin-left: auto;
     padding: 0 30px 10px;
     background: #2A3F54;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 @media (max-width: 767px) {
     .content {

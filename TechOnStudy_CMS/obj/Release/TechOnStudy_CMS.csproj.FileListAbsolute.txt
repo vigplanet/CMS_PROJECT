@@ -61,3 +61,10 @@ D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\TechOnStudy_CMS.csproj.CopyComplete
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\TechOnStudy_CMS.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\TechOnStudy_CMS.pdb
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\TechOnStudy_CMS.csproj.AssemblyReference.cache
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.Common.dll
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.WebForms.dll
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\RdlCompile.cache
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\obj\Release\RdlCompile.compiled

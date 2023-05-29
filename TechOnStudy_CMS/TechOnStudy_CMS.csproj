@@ -53,6 +53,18 @@
       <HintPath>..\..\..\..\..\Mumtaz_BoatHoise\BoatHouse\BoatHouse\bin\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -2471,9 +2483,11 @@
     <Content Include="documentation\assets\js\prettify.js" />
     <Content Include="documentation\index.html" />
     <Content Include="index.aspx" />
+    <Content Include="PrintAdmisisonPDF.aspx" />
     <Content Include="productlist.aspx" />
     <Content Include="Student-Admission-Form.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="add-category-images.aspx.cs">
@@ -2505,6 +2519,26 @@
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dbtoppersias_146DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbtoppersias_146DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbtoppersias_146DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbtoppersias_146DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbtoppersias_146DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbtoppersias_146DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbtoppersias_146DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbtoppersias_146DataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2526,6 +2560,13 @@
     <Compile Include="MasterPageSms.Master.designer.cs">
       <DependentUpon>MasterPageSms.Master</DependentUpon>
     </Compile>
+    <Compile Include="PrintAdmisisonPDF.aspx.cs">
+      <DependentUpon>PrintAdmisisonPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintAdmisisonPDF.aspx.designer.cs">
+      <DependentUpon>PrintAdmisisonPDF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="productlist.aspx.cs">
       <DependentUpon>productlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2540,6 +2581,13 @@
     </Compile>
     <Compile Include="Student-Admission-Form.aspx.designer.cs">
       <DependentUpon>Student-Admission-Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2707,6 +2755,50 @@
     <Content Include="documentation\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="MasterPageSms.Master" />
     <Content Include="connection.config" />
+    <Content Include="dbtoppersias_146DataSet.xsc">
+      <DependentUpon>dbtoppersias_146DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="dbtoppersias_146DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbtoppersias_146DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dbtoppersias_146DataSet.xss">
+      <DependentUpon>dbtoppersias_146DataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="dbtoppersias_146DataSet1.xsc">
+      <DependentUpon>dbtoppersias_146DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="dbtoppersias_146DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbtoppersias_146DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dbtoppersias_146DataSet1.xss">
+      <DependentUpon>dbtoppersias_146DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="dbtoppersias_146DataSet2.xsc">
+      <DependentUpon>dbtoppersias_146DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="dbtoppersias_146DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbtoppersias_146DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dbtoppersias_146DataSet2.xss">
+      <DependentUpon>dbtoppersias_146DataSet2.xsd</DependentUpon>
+    </Content>
+    <Content Include="dbtoppersias_146DataSet4.xsc">
+      <DependentUpon>dbtoppersias_146DataSet4.xsd</DependentUpon>
+    </Content>
+    <None Include="dbtoppersias_146DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbtoppersias_146DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dbtoppersias_146DataSet4.xss">
+      <DependentUpon>dbtoppersias_146DataSet4.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2720,6 +2812,9 @@
     <Folder Include="Upload\ID\" />
     <Folder Include="Upload\PHOTO\" />
     <Folder Include="Upload\SIGNATURE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PrintAdmissionReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

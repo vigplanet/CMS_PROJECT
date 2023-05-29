@@ -1,11 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageSms.Master" AutoEventWireup="true" CodeBehind="Student-Admission-Form.aspx.cs" Inherits="TechOnStudy_CMS.Student_Admission_Form" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="assets/bootstrapa.min.css" rel="stylesheet" />
+    <script src="assets/alertpop.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:UpdatePanel ID="updatepnl" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
         <ContentTemplate>
-            <div class="content-wrapper">
+            <div class="content-wrapper ml-0">
                 <section class="content">
                     <div class="row">
                         <div class="col-lg-12 pinpin">
@@ -13,6 +16,7 @@
                                 <div class="card-header">
                                     <div class="card-title custom_title">
                                         <h4>Student Admission</h4>
+
                                     </div>
                                 </div>
 
@@ -33,18 +37,18 @@
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">GENDER  </label>
                                                     <asp:RadioButtonList ID="rdogender" runat="server" RepeatDirection="Horizontal">
-                                                        <asp:ListItem Selected="True">MALE</asp:ListItem>
-                                                        <asp:ListItem>FEMALE</asp:ListItem>
+                                                        <asp:ListItem Selected="True" Text="MALE" Value="0">MALE</asp:ListItem>
+                                                        <asp:ListItem Text="FEMALE" Value="1">FEMALE</asp:ListItem>
                                                     </asp:RadioButtonList>
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CATEGORY </label>
                                                     <asp:DropDownList ID="ddlcategory" runat="server" class="form-control">
                                                         <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
-                                                        <asp:ListItem Text="General" Value="0">General</asp:ListItem>
-                                                        <asp:ListItem Text="SC" Value="0">SC</asp:ListItem>
-                                                        <asp:ListItem Text="ST" Value="0">ST</asp:ListItem>
-                                                        <asp:ListItem Text="OBC" Value="0">OBC</asp:ListItem>
+                                                        <asp:ListItem Text="General" Value="1">General</asp:ListItem>
+                                                        <asp:ListItem Text="SC" Value="2">SC</asp:ListItem>
+                                                        <asp:ListItem Text="ST" Value="3">ST</asp:ListItem>
+                                                        <asp:ListItem Text="OBC" Value="4">OBC</asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
                                                 <div class="col-md-3 form-group">
@@ -145,6 +149,7 @@
                                                         <asp:DropDownList ID="ddlcity" runat="server" class="form-control"></asp:DropDownList>
                                                     </div>
                                                 </div>
+
                                             </div>
                                             <div class="row">
 
@@ -192,6 +197,7 @@
                                                         <asp:DropDownList ID="ddl_cd_city" runat="server" class="form-control"></asp:DropDownList>
                                                     </div>
                                                 </div>
+
                                             </div>
                                             <div class="row" style="background-color: gray; color: white;">
                                                 COURSE DETAILS
@@ -333,15 +339,15 @@
                                             <div class="row">
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD PHOTO  </label>
-                                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                                    <asp:FileUpload ID="file_photo" runat="server" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD SIGNATURE  </label>
-                                                    <asp:FileUpload ID="FileUpload2" runat="server" />
+                                                    <asp:FileUpload ID="file_signature" runat="server" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD ID PROOF: </label>
-                                                    <asp:FileUpload ID="FileUpload3" runat="server" />
+                                                    <asp:FileUpload ID="file_id" runat="server" />
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -353,7 +359,17 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-12 form-group user-form-group">
+
+                                                <div class="col-md-4 form-group user-form-group">
+                                                    <div class="pull-right">
+                                                        <div class="messagealert" id="alert_container">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-8 form-group user-form-group">
                                                     <div class="pull-right">
 
                                                         <asp:Button ID="Button1" runat="server" Text="Cancel" class="btn btn-danger btn-sm" OnClick="Button1_Click" />
@@ -371,7 +387,13 @@
                     </div>
                 </section>
             </div>
+
+
+
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="Button2" />
+        </Triggers>
     </asp:UpdatePanel>
 
 

@@ -18,6 +18,7 @@ namespace TechOnStudy_CMS
         {
             if (!IsPostBack)
             {
+                Page.Form.Attributes.Add("enctype", "multipart/form-data");
                 ddlCountry.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] order by countryname");
                 ddlCountry.DataTextField = "CountryName";
                 ddlCountry.DataValueField = "CountryId";
@@ -83,6 +84,11 @@ namespace TechOnStudy_CMS
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if (txtcandidatename.Text == "")
+            {
+                ShowMessage("Deleted Data", MessageType.Success);
+                return;
+            }
             #region PHOTO
             string img_photo = "", img_signature = "", img_id = "";
             try
@@ -147,11 +153,11 @@ namespace TechOnStudy_CMS
                     img_id = obj.ToString() + ext;
                     //if (ext == ".pdf")
                     {
-                        if (File.Exists(Server.MapPath("~/Upload/SIGNATURE/" + img_id)))
+                        if (File.Exists(Server.MapPath("~/Upload/ID/" + img_id)))
                         {
-                            File.Delete(Server.MapPath("~/Upload/SIGNATURE/" + img_id));
+                            File.Delete(Server.MapPath("~/Upload/ID/" + img_id));
                         }
-                        file_photo.SaveAs(Server.MapPath("~/Upload/SIGNATURE/" + img_id));
+                        file_photo.SaveAs(Server.MapPath("~/Upload/ID/" + img_id));
                     }
                 }
                 else
@@ -161,57 +167,68 @@ namespace TechOnStudy_CMS
             }
             catch { }
             #endregion
-
-            using (DBClass obj = new DBClass("SET_StudentAdmissionForm", CommandType.StoredProcedure))
+            DataTable dtt = new DataTable();
+            try
             {
-                obj.AddParameters("@ID", 0);
-                obj.AddParameters("@CANDIDATENAME", txtcandidatename.Text);
-                obj.AddParameters("@DATEOFBIRTH	", DateTime.Now);
-                obj.AddParameters("@GENDER", rdogender.SelectedItem.Text);
-                obj.AddParameters("@CATEGORY", ddlcategory.SelectedValue);
-                obj.AddParameters("@EMAILID", txtemaiid.Text);
-                obj.AddParameters("@CONTACTNO", txtcontactno.Text);
-                obj.AddParameters("@ISHANDICAPPED", (chk_handicapped.Checked == true ? 1 : 0));
-                obj.AddParameters("@FATHERSNAME", txtfathername.Text);
-                obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
-                obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
+                using (DBClass obj = new DBClass("SET_StudentAdmissionForm", CommandType.StoredProcedure))
+                {
+                    obj.AddParameters("@ID", 0);
+                    obj.AddParameters("@CANDIDATENAME", txtcandidatename.Text);
+                    obj.AddParameters("@GENDER", rdogender.SelectedValue);
+                    obj.AddParameters("@CATEGORY", ddlcategory.SelectedValue);
+                    obj.AddParameters("@EMAILID", txtemaiid.Text);
+                    obj.AddParameters("@CONTACTNO", txtcontactno.Text);
+                    obj.AddParameters("@ISHANDICAPPED", (chk_handicapped.Checked == true ? 1 : 0));
+                    obj.AddParameters("@FATHERSNAME", txtfathername.Text);
+                    obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
+                    obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
 
-                obj.AddParameters("@PA_LINE", txtPERMANENT_ADDRESS.Text);
-                obj.AddParameters("@PA_CITY_TOWN", txtCity.Text);
-                obj.AddParameters("@PA_COUNTRYID", ddlCountry.SelectedValue);
-                obj.AddParameters("@PA_STATEID", ddlstate.SelectedValue);
-                obj.AddParameters("@PA_CITYID", ddlcity.SelectedValue);
+                    obj.AddParameters("@PA_LINE", txtPERMANENT_ADDRESS.Text);
+                    obj.AddParameters("@PA_CITY_TOWN", txtCity.Text);
+                    obj.AddParameters("@PA_COUNTRYID", ddlCountry.SelectedValue);
+                    obj.AddParameters("@PA_STATEID", ddlstate.SelectedValue);
+                    obj.AddParameters("@PA_CITYID", ddlcity.SelectedValue);
 
-                obj.AddParameters("@CA_LINE", txtCOMMUNICATION_ADDRESS.Text);
-                obj.AddParameters("@CA_CITY_TOWN", txt_cd_city.Text);
-                obj.AddParameters("@CA_COUNTRYID", ddl_cd_country.SelectedValue);
-                obj.AddParameters("@CA_STATEID", ddl_cd_state.SelectedValue);
-                obj.AddParameters("@CA_CITYID", ddl_cd_city.SelectedValue);
+                    obj.AddParameters("@CA_LINE", txtCOMMUNICATION_ADDRESS.Text);
+                    obj.AddParameters("@CA_CITY_TOWN", txt_cd_city.Text);
+                    obj.AddParameters("@CA_COUNTRYID", ddl_cd_country.SelectedValue);
+                    obj.AddParameters("@CA_STATEID", ddl_cd_state.SelectedValue);
+                    obj.AddParameters("@CA_CITYID", ddl_cd_city.SelectedValue);
 
 
-                obj.AddParameters("@SESSIONID", ddlsession.SelectedValue);
-                obj.AddParameters("@CENTREID", ddlcenter.SelectedValue);
-                obj.AddParameters("@COURSEID", ddlcourse.SelectedValue);
-                obj.AddParameters("@BATCH_TYPEID", ddl_batch.Text);
+                    obj.AddParameters("@SESSIONID", ddlsession.SelectedValue);
+                    obj.AddParameters("@CENTREID", ddlcenter.SelectedValue);
+                    obj.AddParameters("@COURSEID", ddlcourse.SelectedValue);
+                    obj.AddParameters("@BATCH_TYPEID", ddl_batch.SelectedValue);
+                    obj.AddParameters("@C_STREAMID", ddlstream.SelectedValue);
 
-                obj.AddParameters("@C_STREAMID", ddlstream.SelectedValue);
+                    obj.AddParameters("@QUALIFICATIONID", ddl_qualification.SelectedValue);
+                    obj.AddParameters("@E_STREAMID", ddlstream2.SelectedValue);
+                    obj.AddParameters("@NAME_OF_COLLEGE", txtcolllegename.Text);
 
-                obj.AddParameters("@QUALIFICATIONID", ddl_qualification.SelectedValue);
-                obj.AddParameters("@E_STREAMID", ddlstream2.SelectedValue);
-                obj.AddParameters("@NAME_OF_COLLEGEID", txtcolllegename.Text);
-
-                obj.AddParameters("@PASSING_YEAR", txtpassingyear.Text);
-                obj.AddParameters("@MARKS_PER", txtmarks.Text);
-                obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", ddloptonalsubject.SelectedValue);
-                obj.AddParameters("@PHOTOS", "");
-                obj.AddParameters("@SIGNATURE", "");
-                obj.AddParameters("@IDPROOF", "");
-                obj.AddParameters("@IS_AGREE", 1);
-                obj.AddParameters("@CreatedDatetime", DateTime.Now);
-                obj.AddParameters("@CreatedIpAddress", "");
-                obj.AddParameters("@Status", 1);
-                obj.ExecuteNonQuery();
+                    obj.AddParameters("@PASSING_YEAR", txtpassingyear.Text);
+                    obj.AddParameters("@MARKS_PER", txtmarks.Text);
+                    obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", ddloptonalsubject.SelectedValue);
+                    obj.AddParameters("@PHOTOS", img_photo);
+                    obj.AddParameters("@SIGNATURE", img_signature);
+                    obj.AddParameters("@IDPROOF", img_id);
+                    obj.AddParameters("@IS_AGREE", 1);
+                    obj.AddParameters("@CreatedDatetime", DateTime.Now);
+                    obj.AddParameters("@CreatedIpAddress", "");
+                    obj.AddParameters("@Status", 1);
+                    dtt= obj.ReturnDataTable();
+                }
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Saves Successfully')", true);
+                Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
             }
+            catch (Exception ex) { }
+        }
+
+
+        public enum MessageType { Success, Error, Info, Warning };
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
     }
 }
