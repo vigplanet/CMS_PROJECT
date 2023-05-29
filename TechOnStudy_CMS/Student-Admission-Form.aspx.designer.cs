@@ -321,31 +321,31 @@ namespace TechOnStudy_CMS
         protected global::System.Web.UI.WebControls.DropDownList ddloptonalsubject;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// file_photo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload file_photo;
 
         /// <summary>
-        /// FileUpload2 control.
+        /// file_signature control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+        protected global::System.Web.UI.WebControls.FileUpload file_signature;
 
         /// <summary>
-        /// FileUpload3 control.
+        /// file_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
+        protected global::System.Web.UI.WebControls.FileUpload file_id;
 
         /// <summary>
         /// CheckBox3 control.

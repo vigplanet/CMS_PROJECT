@@ -37,7 +37,7 @@ namespace TechOnStudy_CMS.Admin
                 //}
 
                 string img1 = "", img2 = "", img3 = "", img4 = "", img5 = "";
-                  #region PDF UPLOAD 2
+                #region PDF UPLOAD 2
                 try
                 {
                     if (FileUpload2.HasFile)
@@ -63,12 +63,12 @@ namespace TechOnStudy_CMS.Admin
                 catch { }
                 #endregion
 
-                
 
-              
 
- 
-                int a = bll.ExecNonQuery("Update [dbo].[ProductCategory] set imgfile='"+ img2 + "' where CategoryID=" + ddproduct.SelectedValue);
+
+
+
+                int a = bll.ExecNonQuery("Update [dbo].[ProductCategory] set imgfile='" + img2 + "' where CategoryID=" + ddproduct.SelectedValue);
 
 
 

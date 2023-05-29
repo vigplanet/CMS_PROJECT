@@ -333,15 +333,15 @@
                                             <div class="row">
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD PHOTO  </label>
-                                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                                    <asp:FileUpload ID="file_photo" runat="server" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD SIGNATURE  </label>
-                                                    <asp:FileUpload ID="FileUpload2" runat="server" />
+                                                    <asp:FileUpload ID="file_signature" runat="server" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD ID PROOF: </label>
-                                                    <asp:FileUpload ID="FileUpload3" runat="server" />
+                                                    <asp:FileUpload ID="file_id" runat="server" />
                                                 </div>
                                             </div>
                                             <div class="row">

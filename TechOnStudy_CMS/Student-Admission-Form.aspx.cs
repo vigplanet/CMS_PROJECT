@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -82,6 +83,85 @@ namespace TechOnStudy_CMS
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            #region PHOTO
+            string img_photo = "", img_signature = "", img_id = "";
+            try
+            {
+                if (file_photo.HasFile)
+                {
+                    string PDFVDfilename = Path.GetFileName(file_photo.PostedFile.FileName);
+                    string ext = Path.GetExtension(PDFVDfilename);
+                    Guid obj = Guid.NewGuid();
+                    img_photo = obj.ToString() + ext;
+                    //if (ext == ".pdf")
+                    {
+                        if (File.Exists(Server.MapPath("~/Upload/PHOTO/" + img_photo)))
+                        {
+                            File.Delete(Server.MapPath("~/Upload/PHOTO/" + img_photo));
+                        }
+                        file_photo.SaveAs(Server.MapPath("~/Upload/PHOTO/" + img_photo));
+                    }
+                }
+                else
+                {
+                    img_photo = "";
+                }
+            }
+            catch { }
+            #endregion
+
+            #region SIGNATURE            
+            try
+            {
+                if (file_signature.HasFile)
+                {
+                    string PDFVDfilename = Path.GetFileName(file_signature.PostedFile.FileName);
+                    string ext = Path.GetExtension(PDFVDfilename);
+                    Guid obj = Guid.NewGuid();
+                    img_signature = obj.ToString() + ext;
+                    //if (ext == ".pdf")
+                    {
+                        if (File.Exists(Server.MapPath("~/Upload/SIGNATURE/" + img_signature)))
+                        {
+                            File.Delete(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
+                        }
+                        file_signature.SaveAs(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
+                    }
+                }
+                else
+                {
+                    img_signature = "";
+                }
+            }
+            catch { }
+            #endregion
+
+            #region img_id            
+            try
+            {
+                if (file_id.HasFile)
+                {
+                    string PDFVDfilename = Path.GetFileName(file_id.PostedFile.FileName);
+                    string ext = Path.GetExtension(PDFVDfilename);
+                    Guid obj = Guid.NewGuid();
+                    img_id = obj.ToString() + ext;
+                    //if (ext == ".pdf")
+                    {
+                        if (File.Exists(Server.MapPath("~/Upload/SIGNATURE/" + img_id)))
+                        {
+                            File.Delete(Server.MapPath("~/Upload/SIGNATURE/" + img_id));
+                        }
+                        file_photo.SaveAs(Server.MapPath("~/Upload/SIGNATURE/" + img_id));
+                    }
+                }
+                else
+                {
+                    img_id = "";
+                }
+            }
+            catch { }
+            #endregion
+
             using (DBClass obj = new DBClass("SET_StudentAdmissionForm", CommandType.StoredProcedure))
             {
                 obj.AddParameters("@ID", 0);
