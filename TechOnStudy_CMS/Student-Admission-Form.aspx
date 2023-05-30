@@ -27,8 +27,9 @@
                                             <div class="row">
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">CANDIDATE NAME :</label>
+                                                    <label class="control-label">CANDIDATE NAME :*</label>
                                                     <asp:TextBox ID="txtcandidatename" runat="server" placeholder="CANDIDATE NAME" class="form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Candidate Name Required" ControlToValidate="txtcandidatename" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <!-- Text input-->
 
@@ -42,7 +43,7 @@
                                                     </asp:RadioButtonList>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">CATEGORY </label>
+                                                    <label class="control-label">CATEGORY *</label>
                                                     <asp:DropDownList ID="ddlcategory" runat="server" class="form-control">
                                                         <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
                                                         <asp:ListItem Text="General" Value="1">General</asp:ListItem>
@@ -64,7 +65,7 @@
 
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">EMAIL ID</label>
+                                                    <label class="control-label">EMAIL ID *</label>
                                                     <asp:TextBox ID="txtemaiid" runat="server" placeholder="EMAIL ID" class="form-control"></asp:TextBox>
                                                 </div>
                                                 <!-- Text input-->
@@ -74,7 +75,7 @@
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">CONTACT NO</label>
+                                                    <label class="control-label">CONTACT NO *</label>
                                                     <asp:TextBox ID="txtcontactno" runat="server" placeholder="Contact No" class="form-control"></asp:TextBox>
                                                 </div>
 
@@ -95,7 +96,7 @@
 
 
                                                 <div class="col-md-4 form-group">
-                                                    <label class="control-label">FATHER'S NAME</label>
+                                                    <label class="control-label">FATHER'S NAME *</label>
                                                     <asp:TextBox ID="txtfathername" runat="server" placeholder="FATHER'S NAME" class="form-control"></asp:TextBox>
                                                 </div>
 
@@ -116,7 +117,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12 form-group">
-                                                    <label class="control-label">LINE 1 </label>
+                                                    <label class="control-label">LINE 1 *</label>
                                                     <asp:TextBox ID="txtPERMANENT_ADDRESS" runat="server" placeholder="PERMANENT ADDRESS" class="form-control"></asp:TextBox>
                                                 </div>
 
@@ -126,7 +127,7 @@
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">Country :</label>
+                                                    <label class="control-label">Country :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlCountry" runat="server" class="form-control" OnSelectedIndexChanged="ddlCountry_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
@@ -135,7 +136,7 @@
                                                 </div>
                                                 <!-- Text input-->
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">State :</label>
+                                                    <label class="control-label">State :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlstate" runat="server" class="form-control" OnSelectedIndexChanged="ddlstate_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
@@ -143,7 +144,7 @@
                                                 </div>
                                                 <!-- Text input-->
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">City :</label>
+                                                    <label class="control-label">City :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlcity" runat="server" class="form-control"></asp:DropDownList>
@@ -204,7 +205,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">SESSION  :</label>
+                                                    <label class="control-label">SESSION  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlsession" runat="server" class="form-control">
@@ -214,7 +215,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">CENTRE :</label>
+                                                    <label class="control-label">CENTRE :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlcenter" runat="server" class="form-control">
@@ -224,7 +225,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">COURSE  :</label>
+                                                    <label class="control-label">COURSE  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlcourse" runat="server" class="form-control">
@@ -235,7 +236,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">BATCH TYPE :</label>
+                                                    <label class="control-label">BATCH TYPE :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
@@ -247,7 +248,7 @@
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">STREAM  :</label>
+                                                    <label class="control-label">STREAM  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
@@ -268,7 +269,7 @@
 
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">QUALIFICATION  :</label>
+                                                    <label class="control-label">QUALIFICATION  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddl_qualification" runat="server" class="form-control">
@@ -283,7 +284,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">STREAM  :</label>
+                                                    <label class="control-label">STREAM  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlstream2" runat="server" class="form-control">
@@ -306,21 +307,21 @@
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">NAME OF COLLEGE (WITH CITY) </label>
+                                                    <label class="control-label">NAME OF COLLEGE (WITH CITY)* </label>
                                                     <asp:TextBox ID="txtcolllegename" runat="server" placeholder="NAME OF COLLEGE (WITH CITY)" class="form-control"></asp:TextBox>
                                                 </div>
 
 
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">PASSING YEAR .</label>
+                                                    <label class="control-label">PASSING YEAR .*</label>
                                                     <asp:TextBox ID="txtpassingyear" runat="server" placeholder="Passing Year" class="form-control"></asp:TextBox>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">MARKS IN %</label>
+                                                    <label class="control-label">MARKS IN % *</label>
                                                     <asp:TextBox ID="txtmarks" runat="server" placeholder="Marks in %" class="form-control"></asp:TextBox>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">OPTIONAL SUBJECT IN CSE :</label>
+                                                    <label class="control-label">OPTIONAL SUBJECT IN CSE :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
@@ -338,19 +339,19 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">UPLOAD PHOTO  </label>
+                                                    <label class="control-label">UPLOAD PHOTO  *</label>
                                                     <asp:FileUpload ID="file_photo" runat="server" />
-                                                    <asp:RequiredFieldValidator ID="rfvFileupload" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_photo" />
+                                                    <asp:RequiredFieldValidator ID="rfvFileupload" runat="server" ErrorMessage="* PHOTO required" ControlToValidate="file_photo" ForeColor="Red" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">UPLOAD SIGNATURE  </label>
+                                                    <label class="control-label">UPLOAD SIGNATURE  *</label>
                                                     <asp:FileUpload ID="file_signature" runat="server" />
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_signature" />
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* SIGNATURE required" ControlToValidate="file_signature" ForeColor="Red" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">UPLOAD ID PROOF: </label>
+                                                    <label class="control-label">UPLOAD ID PROOF : *</label>
                                                     <asp:FileUpload ID="file_id" runat="server" />
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_id" />
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* ID PROOF required" ControlToValidate="file_id" ForeColor="Red" />
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -395,7 +396,7 @@
 
         </ContentTemplate>
         <Triggers>
-            <asp:PostBackTrigger ControlID="Button2" />
+            <asp:PostBackTrigger ControlID="Button2"  />
         </Triggers>
     </asp:UpdatePanel>
 

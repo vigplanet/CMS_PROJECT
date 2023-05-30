@@ -86,9 +86,30 @@ namespace TechOnStudy_CMS
         {
             if (txtcandidatename.Text == "")
             {
-                ShowMessage("Deleted Data", MessageType.Success);
+                ShowMessage("Enter Candidate Name", MessageType.Error);
                 return;
             }
+            if (file_photo.HasFile == false)
+            {
+                ShowMessage("Please Upload Photo", MessageType.Error);
+                return;
+            }
+            if (file_signature.HasFile == false)
+            {
+                ShowMessage("Please Upload Signature", MessageType.Error);
+                return;
+            }
+            if (file_id.HasFile == false)
+            {
+                ShowMessage("Please Upload Any Id Proof", MessageType.Error);
+                return;
+            }
+            if (CheckBox3.Checked == false)
+            {
+                ShowMessage("Please Select Varification", MessageType.Error);
+                return;
+            }
+
             #region PHOTO
             string img_photo = "", img_signature = "", img_id = "";
             try
@@ -216,7 +237,7 @@ namespace TechOnStudy_CMS
                     obj.AddParameters("@CreatedDatetime", DateTime.Now);
                     obj.AddParameters("@CreatedIpAddress", "");
                     obj.AddParameters("@Status", 1);
-                    dtt= obj.ReturnDataTable();
+                    dtt = obj.ReturnDataTable();
                 }
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Saves Successfully')", true);
                 Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
