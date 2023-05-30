@@ -340,21 +340,24 @@
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD PHOTO  </label>
                                                     <asp:FileUpload ID="file_photo" runat="server" />
+                                                    <asp:RequiredFieldValidator ID="rfvFileupload" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_photo" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD SIGNATURE  </label>
                                                     <asp:FileUpload ID="file_signature" runat="server" />
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_signature" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD ID PROOF: </label>
                                                     <asp:FileUpload ID="file_id" runat="server" />
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="validate" runat="server" ErrorMessage="* required" ControlToValidate="file_id" />
                                                 </div>
                                             </div>
                                             <div class="row">
 
                                                 <div class="col-md-12 form-group">
 
-                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="I AGREE TERMS & CONDITIONS" />
+                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="I AGREE TERMS & CONDITIONS"  />
                                                 </div>
                                             </div>
 
