@@ -80,8 +80,10 @@
 
                             <!-- User -->
                             <li class="nav-item dropdown dropdown-user">
- <div class="menus" style="color:wheat;">
-                                     Contact Us : +91-9782961560 
+                                    <div class="menus" style="color:wheat;">
+                                        <p class="mb-0"><strong class="text-warning">Address : </strong>3B,4th Flower, Metro Station, Jaipur 302013</p>
+                                           <p class="mb-0"><strong class="text-warning">Phone No. : </strong> +91 9773636100 </p> 
+                                         <p class="mb-0"><strong class="text-warning">Email : </strong> info@toppersias.in </p> 
                                     </div>
 
                                
@@ -102,7 +104,7 @@
             </asp:UpdatePanel>--%>
 
             <footer class="main-footer ml-0">
-                <strong>Copyright &copy; 2019-2020<a href="#">Vigplanet</a>.</strong> All rights reserved.        
+                <strong>Copyright &copy; 2019-2023 <a href="#">Vigplanet</a>.</strong> All rights reserved.        
             </footer>
         </div>
         <!-- /.wrapper -->

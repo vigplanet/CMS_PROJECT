@@ -193,3 +193,7 @@ D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.Common.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.DataVisualization.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.Common.dll
+E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.DataVisualization.dll
+E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.WebForms.dll

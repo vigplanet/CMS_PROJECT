@@ -15,8 +15,7 @@
                             <div class="card lobicard" data-sortable="true">
                                 <div class="card-header">
                                     <div class="card-title custom_title">
-                                        <h4>Student Admission</h4>
-
+                                        <h3 style="font-weight:600;">Student Admission</h3>
                                     </div>
                                 </div>
 
@@ -46,7 +45,8 @@
                                                     <label class="control-label">CATEGORY *</label>
                                                     <asp:DropDownList ID="ddlcategory" runat="server" class="form-control">
                                                         <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
-                                                        <asp:ListItem Text="General" Value="1">General</asp:ListItem>
+                                                        <asp:ListItem Text="Gen" Value="1">Gen</asp:ListItem>
+                                                        <asp:ListItem Text="Gen-EWS" Value="5">Gen-EWS</asp:ListItem>
                                                         <asp:ListItem Text="SC" Value="2">SC</asp:ListItem>
                                                         <asp:ListItem Text="ST" Value="3">ST</asp:ListItem>
                                                         <asp:ListItem Text="OBC" Value="4">OBC</asp:ListItem>
@@ -54,7 +54,8 @@
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">Select</label>
-                                                    <asp:CheckBox ID="chk_handicapped" runat="server" class="form-control" Text="HANDICAPPED (PHYSICALLY DISABLE)" />
+                                                    <asp:CheckBox ID="chk_handicapped" runat="server" class="form-control" Text="" />
+                                                    <p><label>HANDICAPPED (PHYSICALLY DISABLE)</label></p>
                                                 </div>
                                             </div>
 
@@ -89,7 +90,7 @@
 
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 FATHER'S/GUARDIAN'S DETAILS
                                             </div>
                                             <div class="row">
@@ -112,7 +113,7 @@
 
                                             </div>
 
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 PERMANENT ADDRESS
                                             </div>
                                             <div class="row">
@@ -155,10 +156,11 @@
                                             <div class="row">
 
                                                 <div class="col-md-12 form-group">
-                                                    <asp:CheckBox ID="chksame" runat="server" class="form-control" Text="IS YOUR COMMUNICATION ADDRESS IS SAME AS YOUR PERMANENT ADDRESSCOMMUNICATION ADDRESS" OnCheckedChanged="chksame_CheckedChanged" AutoPostBack="true" />
+                                                    <asp:CheckBox ID="chksame" runat="server" class="form-control" Text="" OnCheckedChanged="chksame_CheckedChanged" AutoPostBack="true" />
+                                                    <p><b>IS YOUR COMMUNICATION ADDRESS IS SAME AS YOUR PERMANENT ADDRESSCOMMUNICATION ADDRESS</b></p>
                                                 </div>
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 COMMUNICATION ADDRESS
                                             </div>
 
@@ -200,7 +202,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 COURSE DETAILS
                                             </div>
                                             <div class="row">
@@ -211,6 +213,7 @@
                                                         <asp:DropDownList ID="ddlsession" runat="server" class="form-control">
                                                             <asp:ListItem Text="---SELECT---" Value="0">---SELECT---</asp:ListItem>
                                                             <asp:ListItem Text="2023-2024" Value="1">2023-2024</asp:ListItem>
+                                                            <asp:ListItem Text="2024-2025" Value="2">2024-2025</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -243,6 +246,7 @@
                                                         <asp:DropDownList ID="ddl_batch" runat="server" class="form-control">
                                                             <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
                                                             <asp:ListItem Text="Online Classes" Value="1">Online Classes</asp:ListItem>
+                                                            <asp:ListItem Text="Online test Series" Value="2">Online test Series</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -258,9 +262,20 @@
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
+                                                 <div class="col-md-3 form-group">
+                                                    <label class="control-label">UPSC Roll No  :*</label>
+                                                    <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
+                                                    <div class="input-group">
+
+                                                        <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                                            <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
+                                                            <asp:ListItem Text="Sociology" Value="1">Sociology</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
+                                                </div>
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 EDUCATION DETAILS
                                             </div>
                                             <div class="row">
@@ -334,7 +349,7 @@
 
                                             </div>
 
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 UPLOAD IMAGE / DOCUMENTS
                                             </div>
                                             <div class="row">
@@ -373,9 +388,8 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-8 form-group user-form-group">
-                                                    <div class="pull-right">
-
+                                                <div class="col-md-12 form-group user-form-group">
+                                                    <div class="text-center">
                                                         <asp:Button ID="Button1" runat="server" Text="Cancel" class="btn btn-danger btn-sm" OnClick="Button1_Click" />
                                                         <asp:Button ID="Button2" runat="server" Text="Save" class="btn btn-add btn-sm" OnClick="Button2_Click" />
 
@@ -399,6 +413,4 @@
             <asp:PostBackTrigger ControlID="Button2"  />
         </Triggers>
     </asp:UpdatePanel>
-
-
 </asp:Content>
