@@ -2486,6 +2486,7 @@
     <Content Include="PrintAdmisisonPDF.aspx" />
     <Content Include="productlist.aspx" />
     <Content Include="Student-Admission-Form.aspx" />
+    <Content Include="Upload\calender.png" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>

@@ -15,8 +15,7 @@
                             <div class="card lobicard" data-sortable="true">
                                 <div class="card-header">
                                     <div class="card-title custom_title">
-                                        <h4>Student Admission</h4>
-
+                                        <h3 style="font-weight: 600;">Student Admission</h3>
                                     </div>
                                 </div>
 
@@ -35,29 +34,40 @@
 
 
 
-                                                <div class="col-md-3 form-group">
+                                                <div class="col-md-2 form-group">
                                                     <label class="control-label">GENDER  </label>
                                                     <asp:RadioButtonList ID="rdogender" runat="server" RepeatDirection="Horizontal">
                                                         <asp:ListItem Selected="True" Text="MALE" Value="0">MALE</asp:ListItem>
                                                         <asp:ListItem Text="FEMALE" Value="1">FEMALE</asp:ListItem>
                                                     </asp:RadioButtonList>
                                                 </div>
-                                                <div class="col-md-3 form-group">
+                                                <div class="col-md-2 form-group">
                                                     <label class="control-label">CATEGORY *</label>
                                                     <asp:DropDownList ID="ddlcategory" runat="server" class="form-control">
                                                         <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
-                                                        <asp:ListItem Text="General" Value="1">General</asp:ListItem>
+                                                        <asp:ListItem Text="Gen" Value="1">Gen</asp:ListItem>
+                                                        <asp:ListItem Text="Gen-EWS" Value="5">Gen-EWS</asp:ListItem>
                                                         <asp:ListItem Text="SC" Value="2">SC</asp:ListItem>
                                                         <asp:ListItem Text="ST" Value="3">ST</asp:ListItem>
                                                         <asp:ListItem Text="OBC" Value="4">OBC</asp:ListItem>
                                                     </asp:DropDownList>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Category Required" ControlToValidate="ddlcategory" ForeColor="Red"></asp:RequiredFieldValidator>
+                                             
                                                 </div>
+
+                                            
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">Select</label>
-                                                    <asp:CheckBox ID="chk_handicapped" runat="server" class="form-control" Text="HANDICAPPED (PHYSICALLY DISABLE)" />
+                                                    <label class="control-label">HANDICAPPED (PHYSICALLY DISABLE)</label>
+                                                    <asp:CheckBox ID="chk_handicapped" runat="server" class="form-control" Text="Yes"/>
+                                                    
+                                                </div>
+                                                <div class="col-md-2 form-group">
+                                                    <label class="control-label">DOB </label>
+                                                    <asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="txtdob" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                
                                                 </div>
                                             </div>
-
                                             <div class="row">
 
                                                 <!-- Text input-->
@@ -67,11 +77,15 @@
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">EMAIL ID *</label>
                                                     <asp:TextBox ID="txtemaiid" runat="server" placeholder="EMAIL ID" class="form-control"></asp:TextBox>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="EmailId Required" ControlToValidate="txtemaiid" ForeColor="Red"></asp:RequiredFieldValidator>                                                
+                                                    <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtemaiid" ErrorMessage="Invalid Email Format" ForeColor="Red"></asp:RegularExpressionValidator>
                                                 </div>
                                                 <!-- Text input-->
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CONFIRM EMAIL ID</label>
                                                     <asp:TextBox ID="txtconfirmemail" runat="server" placeholder="CONFIRM EMAIL ID" class="form-control"></asp:TextBox>
+                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Confirm EmailId Required" ControlToValidate="txtconfirmemail" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtconfirmemail" ErrorMessage="Invalid Email Format" ForeColor="Red"></asp:RegularExpressionValidator>
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
@@ -81,7 +95,7 @@
 
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CONFIRM CONTACT NO</label>
-                                                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Contact No" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtconfirmno" runat="server" placeholder="Contact No" class="form-control"></asp:TextBox>
                                                 </div>
 
 
@@ -89,7 +103,7 @@
 
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 FATHER'S/GUARDIAN'S DETAILS
                                             </div>
                                             <div class="row">
@@ -112,7 +126,7 @@
 
                                             </div>
 
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 PERMANENT ADDRESS
                                             </div>
                                             <div class="row">
@@ -155,10 +169,11 @@
                                             <div class="row">
 
                                                 <div class="col-md-12 form-group">
-                                                    <asp:CheckBox ID="chksame" runat="server" class="form-control" Text="IS YOUR COMMUNICATION ADDRESS IS SAME AS YOUR PERMANENT ADDRESSCOMMUNICATION ADDRESS" OnCheckedChanged="chksame_CheckedChanged" AutoPostBack="true" />
+                                                    <asp:CheckBox ID="chksame" runat="server" class="form-control" Text="" OnCheckedChanged="chksame_CheckedChanged" AutoPostBack="true" />
+                                                    <p><b>IS YOUR COMMUNICATION ADDRESS IS SAME AS YOUR PERMANENT ADDRESSCOMMUNICATION ADDRESS</b></p>
                                                 </div>
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 COMMUNICATION ADDRESS
                                             </div>
 
@@ -200,7 +215,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 COURSE DETAILS
                                             </div>
                                             <div class="row">
@@ -211,6 +226,7 @@
                                                         <asp:DropDownList ID="ddlsession" runat="server" class="form-control">
                                                             <asp:ListItem Text="---SELECT---" Value="0">---SELECT---</asp:ListItem>
                                                             <asp:ListItem Text="2023-2024" Value="1">2023-2024</asp:ListItem>
+                                                            <asp:ListItem Text="2024-2025" Value="2">2024-2025</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -243,6 +259,7 @@
                                                         <asp:DropDownList ID="ddl_batch" runat="server" class="form-control">
                                                             <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
                                                             <asp:ListItem Text="Online Classes" Value="1">Online Classes</asp:ListItem>
+                                                            <asp:ListItem Text="Online test Series" Value="2">Online test Series</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -258,9 +275,17 @@
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-3 form-group">
+                                                    <label class="control-label">UPSC Roll No  :*</label>
+                                                    <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
+                                                    <div class="input-group">
+
+                                                     <asp:TextBox ID="txtUpscRollno" runat="server" placeholder="UPSC Roll No" class="form-control"></asp:TextBox>
+                                                    </div>
+                                                </div>
 
                                             </div>
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 EDUCATION DETAILS
                                             </div>
                                             <div class="row">
@@ -334,7 +359,7 @@
 
                                             </div>
 
-                                            <div class="row" style="background-color: gray; color: white;">
+                                            <div class="row" style="background-color: #2e2e2e; color: #fff; padding: 10px 13px; font-weight: 600; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 15px;">
                                                 UPLOAD IMAGE / DOCUMENTS
                                             </div>
                                             <div class="row">
@@ -357,8 +382,7 @@
                                             <div class="row">
 
                                                 <div class="col-md-12 form-group">
-
-                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="I AGREE TERMS & CONDITIONS"  />
+                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="I AGREE TERMS & CONDITIONS" />
                                                 </div>
                                             </div>
 
@@ -373,12 +397,12 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-8 form-group user-form-group">
-                                                    <div class="pull-right">
-
+                                                <div class="col-md-12 form-group user-form-group">
+                                                    <div class="text-center">
                                                         <asp:Button ID="Button1" runat="server" Text="Cancel" class="btn btn-danger btn-sm" OnClick="Button1_Click" />
                                                         <asp:Button ID="Button2" runat="server" Text="Save" class="btn btn-add btn-sm" OnClick="Button2_Click" />
-
+                                                          
+                                                        <asp:Label ID="lblerrormsg" runat="server" Text="" ForeColor="Red" class="control-label"></asp:Label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -396,9 +420,27 @@
 
         </ContentTemplate>
         <Triggers>
-            <asp:PostBackTrigger ControlID="Button2"  />
+            <asp:PostBackTrigger ControlID="Button2" />
         </Triggers>
     </asp:UpdatePanel>
+    <script type="text/javascript">
+        function pageLoad() {
+            $(function () {
+                $('.Calender').datepicker({
+                    showButtonPanel: true,
+                    dateFormat: "mm/dd/yy",
+                    showAnim: "slide",
+                    changeMonth: true,
+                    changeYear: true,
+                    showOn: "button",
+                    buttonImage: "Upload/calender.png",
+                    buttonImageOnly: true,
 
+                    showButtonPanel: true
+                });
+            });
 
+        }
+
+    </script>
 </asp:Content>

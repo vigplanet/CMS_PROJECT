@@ -84,165 +84,165 @@ namespace TechOnStudy_CMS
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (txtcandidatename.Text == "")
-            {
-                ShowMessage("Enter Candidate Name", MessageType.Error);
-                return;
-            }
-            if (file_photo.HasFile == false)
-            {
-                ShowMessage("Please Upload Photo", MessageType.Error);
-                return;
-            }
-            if (file_signature.HasFile == false)
-            {
-                ShowMessage("Please Upload Signature", MessageType.Error);
-                return;
-            }
-            if (file_id.HasFile == false)
-            {
-                ShowMessage("Please Upload Any Id Proof", MessageType.Error);
-                return;
-            }
+            lblerrormsg.Text = "";
+
             if (CheckBox3.Checked == false)
             {
-                ShowMessage("Please Select Varification", MessageType.Error);
+                lblerrormsg.Text = "Please Select TERMS & CONDITIONS";
+                ShowMessage("Please Select TERMS & CONDITIONS", MessageType.Error);
                 return;
             }
-
-            #region PHOTO
-            string img_photo = "", img_signature = "", img_id = "";
-            try
+            else if (txtemaiid.Text != txtconfirmemail.Text)
             {
-                if (file_photo.HasFile)
+                lblerrormsg.Text = "Email id Mismatch";
+                ShowMessage("Email id Mismatch", MessageType.Error);
+                return;
+            }
+            else if (txtcontactno.Text != txtconfirmno.Text)
+            {
+                lblerrormsg.Text = "Mobile No Mismatch";
+                ShowMessage("Mobile No Mismatch", MessageType.Error);
+                return;
+            }
+            else
+            {
+                #region PHOTO
+                string img_photo = "", img_signature = "", img_id = "";
+                try
                 {
-                    string PDFVDfilename = Path.GetFileName(file_photo.PostedFile.FileName);
-                    string ext = Path.GetExtension(PDFVDfilename);
-                    Guid obj = Guid.NewGuid();
-                    img_photo = obj.ToString() + ext;
-                    //if (ext == ".pdf")
+                    if (file_photo.HasFile)
                     {
-                        if (File.Exists(Server.MapPath("~/Upload/PHOTO/" + img_photo)))
+                        string PDFVDfilename = Path.GetFileName(file_photo.PostedFile.FileName);
+                        string ext = Path.GetExtension(PDFVDfilename);
+                        Guid obj = Guid.NewGuid();
+                        img_photo = obj.ToString() + ext;
+                        //if (ext == ".pdf")
                         {
-                            File.Delete(Server.MapPath("~/Upload/PHOTO/" + img_photo));
+                            if (File.Exists(Server.MapPath("~/Upload/PHOTO/" + img_photo)))
+                            {
+                                File.Delete(Server.MapPath("~/Upload/PHOTO/" + img_photo));
+                            }
+                            file_photo.SaveAs(Server.MapPath("~/Upload/PHOTO/" + img_photo));
                         }
-                        file_photo.SaveAs(Server.MapPath("~/Upload/PHOTO/" + img_photo));
+                    }
+                    else
+                    {
+                        img_photo = "";
                     }
                 }
-                else
-                {
-                    img_photo = "";
-                }
-            }
-            catch { }
-            #endregion
+                catch { }
+                #endregion
 
-            #region SIGNATURE            
-            try
-            {
-                if (file_signature.HasFile)
+                #region SIGNATURE            
+                try
                 {
-                    string PDFVDfilename = Path.GetFileName(file_signature.PostedFile.FileName);
-                    string ext = Path.GetExtension(PDFVDfilename);
-                    Guid obj = Guid.NewGuid();
-                    img_signature = obj.ToString() + ext;
-                    //if (ext == ".pdf")
+                    if (file_signature.HasFile)
                     {
-                        if (File.Exists(Server.MapPath("~/Upload/SIGNATURE/" + img_signature)))
+                        string PDFVDfilename = Path.GetFileName(file_signature.PostedFile.FileName);
+                        string ext = Path.GetExtension(PDFVDfilename);
+                        Guid obj = Guid.NewGuid();
+                        img_signature = obj.ToString() + ext;
+                        //if (ext == ".pdf")
                         {
-                            File.Delete(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
+                            if (File.Exists(Server.MapPath("~/Upload/SIGNATURE/" + img_signature)))
+                            {
+                                File.Delete(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
+                            }
+                            file_signature.SaveAs(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
                         }
-                        file_signature.SaveAs(Server.MapPath("~/Upload/SIGNATURE/" + img_signature));
+                    }
+                    else
+                    {
+                        img_signature = "";
                     }
                 }
-                else
-                {
-                    img_signature = "";
-                }
-            }
-            catch { }
-            #endregion
+                catch { }
+                #endregion
 
-            #region img_id            
-            try
-            {
-                if (file_id.HasFile)
+                #region img_id            
+                try
                 {
-                    string PDFVDfilename = Path.GetFileName(file_id.PostedFile.FileName);
-                    string ext = Path.GetExtension(PDFVDfilename);
-                    Guid obj = Guid.NewGuid();
-                    img_id = obj.ToString() + ext;
-                    //if (ext == ".pdf")
+                    if (file_id.HasFile)
                     {
-                        if (File.Exists(Server.MapPath("~/Upload/ID/" + img_id)))
+                        string PDFVDfilename = Path.GetFileName(file_id.PostedFile.FileName);
+                        string ext = Path.GetExtension(PDFVDfilename);
+                        Guid obj = Guid.NewGuid();
+                        img_id = obj.ToString() + ext;
+                        //if (ext == ".pdf")
                         {
-                            File.Delete(Server.MapPath("~/Upload/ID/" + img_id));
+                            if (File.Exists(Server.MapPath("~/Upload/ID/" + img_id)))
+                            {
+                                File.Delete(Server.MapPath("~/Upload/ID/" + img_id));
+                            }
+                            file_photo.SaveAs(Server.MapPath("~/Upload/ID/" + img_id));
                         }
-                        file_photo.SaveAs(Server.MapPath("~/Upload/ID/" + img_id));
+                    }
+                    else
+                    {
+                        img_id = "";
                     }
                 }
-                else
+                catch { }
+                #endregion
+                DataTable dtt = new DataTable();
+                try
                 {
-                    img_id = "";
+                    using (DBClass obj = new DBClass("SET_StudentAdmissionForm", CommandType.StoredProcedure))
+                    {
+                        obj.AddParameters("@ID", 0);
+                        obj.AddParameters("@CANDIDATENAME", txtcandidatename.Text);
+                        obj.AddParameters("@GENDER", rdogender.SelectedValue);
+                        obj.AddParameters("@CATEGORY", ddlcategory.SelectedValue);
+                        obj.AddParameters("@DOB", txtdob.Text);
+                        obj.AddParameters("@UpscRollNo", txtUpscRollno.Text);
+                        obj.AddParameters("@EMAILID", txtemaiid.Text);
+                        obj.AddParameters("@CONTACTNO", txtcontactno.Text);
+                        obj.AddParameters("@ISHANDICAPPED", (chk_handicapped.Checked == true ? 1 : 0));
+                        obj.AddParameters("@FATHERSNAME", txtfathername.Text);
+                        obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
+                        obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
+
+                        obj.AddParameters("@PA_LINE", txtPERMANENT_ADDRESS.Text);
+                        obj.AddParameters("@PA_CITY_TOWN", txtCity.Text);
+                        obj.AddParameters("@PA_COUNTRYID", ddlCountry.SelectedValue);
+                        obj.AddParameters("@PA_STATEID", ddlstate.SelectedValue);
+                        obj.AddParameters("@PA_CITYID", ddlcity.SelectedValue);
+
+                        obj.AddParameters("@CA_LINE", txtCOMMUNICATION_ADDRESS.Text);
+                        obj.AddParameters("@CA_CITY_TOWN", txt_cd_city.Text);
+                        obj.AddParameters("@CA_COUNTRYID", ddl_cd_country.SelectedValue);
+                        obj.AddParameters("@CA_STATEID", ddl_cd_state.SelectedValue);
+                        obj.AddParameters("@CA_CITYID", ddl_cd_city.SelectedValue);
+
+
+                        obj.AddParameters("@SESSIONID", ddlsession.SelectedValue);
+                        obj.AddParameters("@CENTREID", ddlcenter.SelectedValue);
+                        obj.AddParameters("@COURSEID", ddlcourse.SelectedValue);
+                        obj.AddParameters("@BATCH_TYPEID", ddl_batch.SelectedValue);
+                        obj.AddParameters("@C_STREAMID", ddlstream.SelectedValue);
+
+                        obj.AddParameters("@QUALIFICATIONID", ddl_qualification.SelectedValue);
+                        obj.AddParameters("@E_STREAMID", ddlstream2.SelectedValue);
+                        obj.AddParameters("@NAME_OF_COLLEGE", txtcolllegename.Text);
+
+                        obj.AddParameters("@PASSING_YEAR", txtpassingyear.Text);
+                        obj.AddParameters("@MARKS_PER", txtmarks.Text);
+                        obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", ddloptonalsubject.SelectedValue);
+                        obj.AddParameters("@PHOTOS", img_photo);
+                        obj.AddParameters("@SIGNATURE", img_signature);
+                        obj.AddParameters("@IDPROOF", img_id);
+                        obj.AddParameters("@IS_AGREE", 1);
+                        obj.AddParameters("@CreatedDatetime", DateTime.Now);
+                        obj.AddParameters("@CreatedIpAddress", "");
+                        obj.AddParameters("@Status", 1);
+                        dtt = obj.ReturnDataTable();
+                    }
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Saves Successfully')", true);
+                    Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
+
                 }
+                catch (Exception ex) { }
             }
-            catch { }
-            #endregion
-            DataTable dtt = new DataTable();
-            try
-            {
-                using (DBClass obj = new DBClass("SET_StudentAdmissionForm", CommandType.StoredProcedure))
-                {
-                    obj.AddParameters("@ID", 0);
-                    obj.AddParameters("@CANDIDATENAME", txtcandidatename.Text);
-                    obj.AddParameters("@GENDER", rdogender.SelectedValue);
-                    obj.AddParameters("@CATEGORY", ddlcategory.SelectedValue);
-                    obj.AddParameters("@EMAILID", txtemaiid.Text);
-                    obj.AddParameters("@CONTACTNO", txtcontactno.Text);
-                    obj.AddParameters("@ISHANDICAPPED", (chk_handicapped.Checked == true ? 1 : 0));
-                    obj.AddParameters("@FATHERSNAME", txtfathername.Text);
-                    obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
-                    obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
-
-                    obj.AddParameters("@PA_LINE", txtPERMANENT_ADDRESS.Text);
-                    obj.AddParameters("@PA_CITY_TOWN", txtCity.Text);
-                    obj.AddParameters("@PA_COUNTRYID", ddlCountry.SelectedValue);
-                    obj.AddParameters("@PA_STATEID", ddlstate.SelectedValue);
-                    obj.AddParameters("@PA_CITYID", ddlcity.SelectedValue);
-
-                    obj.AddParameters("@CA_LINE", txtCOMMUNICATION_ADDRESS.Text);
-                    obj.AddParameters("@CA_CITY_TOWN", txt_cd_city.Text);
-                    obj.AddParameters("@CA_COUNTRYID", ddl_cd_country.SelectedValue);
-                    obj.AddParameters("@CA_STATEID", ddl_cd_state.SelectedValue);
-                    obj.AddParameters("@CA_CITYID", ddl_cd_city.SelectedValue);
-
-
-                    obj.AddParameters("@SESSIONID", ddlsession.SelectedValue);
-                    obj.AddParameters("@CENTREID", ddlcenter.SelectedValue);
-                    obj.AddParameters("@COURSEID", ddlcourse.SelectedValue);
-                    obj.AddParameters("@BATCH_TYPEID", ddl_batch.SelectedValue);
-                    obj.AddParameters("@C_STREAMID", ddlstream.SelectedValue);
-
-                    obj.AddParameters("@QUALIFICATIONID", ddl_qualification.SelectedValue);
-                    obj.AddParameters("@E_STREAMID", ddlstream2.SelectedValue);
-                    obj.AddParameters("@NAME_OF_COLLEGE", txtcolllegename.Text);
-
-                    obj.AddParameters("@PASSING_YEAR", txtpassingyear.Text);
-                    obj.AddParameters("@MARKS_PER", txtmarks.Text);
-                    obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", ddloptonalsubject.SelectedValue);
-                    obj.AddParameters("@PHOTOS", img_photo);
-                    obj.AddParameters("@SIGNATURE", img_signature);
-                    obj.AddParameters("@IDPROOF", img_id);
-                    obj.AddParameters("@IS_AGREE", 1);
-                    obj.AddParameters("@CreatedDatetime", DateTime.Now);
-                    obj.AddParameters("@CreatedIpAddress", "");
-                    obj.AddParameters("@Status", 1);
-                    dtt = obj.ReturnDataTable();
-                }
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Saves Successfully')", true);
-                Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
-            }
-            catch (Exception ex) { }
         }
 
 
