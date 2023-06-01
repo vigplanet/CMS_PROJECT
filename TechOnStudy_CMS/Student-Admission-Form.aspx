@@ -382,7 +382,7 @@
                                             <div class="row">
 
                                                 <div class="col-md-12 form-group">
-                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="I AGREE TERMS & CONDITIONS" />
+                                                    <asp:CheckBox ID="CheckBox3" runat="server" class="form-control" Text="Declaration: I hereby declare that all the information contained in the form is true and i shall abide by all the rules and regulations of the institute" />
                                                 </div>
                                             </div>
 

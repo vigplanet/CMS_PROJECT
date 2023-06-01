@@ -23,11 +23,13 @@ namespace TechOnStudy_CMS
                 ddlCountry.DataTextField = "CountryName";
                 ddlCountry.DataValueField = "CountryId";
                 ddlCountry.DataBind();
+                ddlCountry_SelectedIndexChanged(ddlCountry, new EventArgs());
 
                 ddl_cd_country.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] where CountryId=106 order by countryname");
                 ddl_cd_country.DataTextField = "CountryName";
                 ddl_cd_country.DataValueField = "CountryId";
                 ddl_cd_country.DataBind();
+                ddl_cd_country_SelectedIndexChanged(ddl_cd_country, new EventArgs());
             }
         }
 

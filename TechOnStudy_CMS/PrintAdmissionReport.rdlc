@@ -144,7 +144,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>MOTHER  OCCUP. :</Value>
+                <Value>MOTHER'S OCCUP. :</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1370,7 +1370,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!PA_CityName.Value, "DataSet1")</Value>
+                <Value>=First(Fields!PA_StateName.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1502,7 +1502,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CA_StateName.Value, "DataSet1")</Value>
+                <Value>=First(Fields!PA_CityName.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1535,7 +1535,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CA_CityName.Value, "DataSet1")</Value>
+                <Value>=First(Fields!CA_StateName.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1601,7 +1601,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CName.Value, "DataSet1")</Value>
+                <Value>=First(Fields!CA_CityName.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1978,8 +1978,8 @@
         <Source>External</Source>
         <Value>=First(Fields!SIGNATURE.Value, "DataSet1")</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>7.82367in</Top>
-        <Left>5.42486in</Left>
+        <Top>7.3391in</Top>
+        <Left>5.40972in</Left>
         <Height>0.93371in</Height>
         <Width>2.36553in</Width>
         <ZIndex>59</ZIndex>
@@ -1989,38 +1989,6 @@
           </Border>
         </Style>
       </Image>
-      <Textbox Name="Textbox74">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>SIGNATURE :</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>7.53201in</Top>
-        <Left>5.42486in</Left>
-        <Height>0.25in</Height>
-        <Width>1.37848in</Width>
-        <ZIndex>60</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="GenderName">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -2042,7 +2010,7 @@
         <Left>1.46403in</Left>
         <Height>0.25in</Height>
         <Width>0.875in</Width>
-        <ZIndex>61</ZIndex>
+        <ZIndex>60</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2060,7 +2028,7 @@
         <Left>2.33158in</Left>
         <Height>0.65614in</Height>
         <Width>2.69244in</Width>
-        <ZIndex>62</ZIndex>
+        <ZIndex>61</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2074,7 +2042,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Address : 3B,4th Flower, Metro Station, Jaipur 302013</Value>
+                <Value>3B,4th Floor, Croma Centre, Pusa Road, Near Karol Bagh Metro, New Delhi-110005</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2087,7 +2055,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Contact No : +91 9773636100, Email : info@toppersias.in</Value>
+                <Value>Contact No : +91 9773636100 | Email : info@toppersias.in | www.toppersias.in</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2103,7 +2071,7 @@
         <Left>0.04264in</Left>
         <Height>0.54167in</Height>
         <Width>7.70361in</Width>
-        <ZIndex>63</ZIndex>
+        <ZIndex>62</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2118,7 +2086,7 @@
         <Top>5.54042in</Top>
         <Height>0in</Height>
         <Width>7.74625in</Width>
-        <ZIndex>64</ZIndex>
+        <ZIndex>63</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2129,13 +2097,47 @@
         <Top>3.31473in</Top>
         <Height>0in</Height>
         <Width>7.74625in</Width>
-        <ZIndex>65</ZIndex>
+        <ZIndex>64</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Declaration: I hereby declare that all the information contained in the form is true and i shall abide by all the rules and regulations of the institute</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>8.32837in</Top>
+        <Left>0.06788in</Left>
+        <Height>0.41667in</Height>
+        <Width>7.82861in</Width>
+        <ZIndex>65</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>8.95833in</Height>
     <Style />
