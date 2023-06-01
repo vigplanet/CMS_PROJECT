@@ -120,7 +120,7 @@
                                                 </div>
 
                                                 <div class="col-md-4 form-group">
-                                                    <label class="control-label">MOTHER OCCUPATION </label>
+                                                    <label class="control-label">MOTHER'S OCCUPATION </label>
                                                     <asp:TextBox ID="txtmother_OCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control"></asp:TextBox>
                                                 </div>
 

@@ -19,12 +19,12 @@ namespace TechOnStudy_CMS
             if (!IsPostBack)
             {
                 Page.Form.Attributes.Add("enctype", "multipart/form-data");
-                ddlCountry.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] order by countryname");
+                ddlCountry.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] where CountryId=106 order by countryname");
                 ddlCountry.DataTextField = "CountryName";
                 ddlCountry.DataValueField = "CountryId";
                 ddlCountry.DataBind();
 
-                ddl_cd_country.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] order by countryname");
+                ddl_cd_country.DataSource = bll.GetDataSet("select 0 CountryId,'Select' as CountryName UNION ALL select CountryId,CountryName from [Country_Master] where CountryId=106 order by countryname");
                 ddl_cd_country.DataTextField = "CountryName";
                 ddl_cd_country.DataValueField = "CountryId";
                 ddl_cd_country.DataBind();
