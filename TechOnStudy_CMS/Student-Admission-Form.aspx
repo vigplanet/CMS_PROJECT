@@ -15,7 +15,7 @@
                             <div class="card lobicard" data-sortable="true">
                                 <div class="card-header">
                                     <div class="card-title custom_title">
-                                        <h3 style="font-weight: 600;">Student Admission</h3>
+                                        <h3 style="font-weight: 600;">ONLINE ADMISSION FORM</h3>
                                     </div>
                                 </div>
 
@@ -35,7 +35,7 @@
 
 
                                                 <div class="col-md-2 form-group">
-                                                    <label class="control-label">GENDER  </label>
+                                                    <label class="control-label">GENDER : * </label>
                                                     <asp:RadioButtonList ID="rdogender" runat="server" RepeatDirection="Horizontal">
                                                         <asp:ListItem Selected="True" Text="MALE" Value="0">MALE</asp:ListItem>
                                                         <asp:ListItem Text="FEMALE" Value="1">FEMALE</asp:ListItem>
@@ -56,13 +56,9 @@
                                                 </div>
 
                                             
-                                                <div class="col-md-3 form-group">
-                                                    <label class="control-label">HANDICAPPED (PHYSICALLY DISABLE)</label>
-                                                    <asp:CheckBox ID="chk_handicapped" runat="server" class="form-control" Text="Yes"/>
-                                                    
-                                                </div>
+                                               
                                                 <div class="col-md-2 form-group">
-                                                    <label class="control-label">DOB </label>
+                                                    <label class="control-label">DOB : *</label>
                                                     <asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="txtdob" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 
@@ -115,13 +111,15 @@
                                                 </div>
 
                                                 <div class="col-md-4 form-group">
-                                                    <label class="control-label">OCCUPATION </label>
+                                                    <label class="control-label">OCCUPATION : *</label>
                                                     <asp:TextBox ID="txtOCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="FATHER'S OCCUPATION Required" ControlToValidate="txtOCCUPATION" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
 
                                                 <div class="col-md-4 form-group">
-                                                    <label class="control-label">MOTHER'S OCCUPATION </label>
+                                                    <label class="control-label">MOTHER'S OCCUPATION : * </label>
                                                     <asp:TextBox ID="txtmother_OCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="MOTHER'S OCCUPATION Required" ControlToValidate="txtOCCUPATION" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
 
                                             </div>
@@ -276,7 +274,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">UPSC Roll No  :*</label>
+                                                    <label class="control-label">UPSC Roll No  :</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
@@ -378,6 +376,10 @@
                                                     <asp:FileUpload ID="file_id" runat="server" />
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* ID PROOF required" ControlToValidate="file_id" ForeColor="Red" />
                                                 </div>
+                                                <div class="col-md-3 form-group">
+                                                    <label class="control-label">UPLOAD ID UPSC ADMIT CARD : </label>
+                                                    <asp:FileUpload ID="file_admitcard" runat="server" />                                                    
+                                                </div>
                                             </div>
                                             <div class="row">
 
@@ -399,8 +401,8 @@
 
                                                 <div class="col-md-12 form-group user-form-group">
                                                     <div class="text-center">
-                                                        <asp:Button ID="Button1" runat="server" Text="Cancel" class="btn btn-danger btn-sm" OnClick="Button1_Click" />
-                                                        <asp:Button ID="Button2" runat="server" Text="Save" class="btn btn-add btn-sm" OnClick="Button2_Click" />
+                                                        <asp:Button ID="Button1" runat="server" Text="Reset" class="btn btn-danger btn-sm" OnClick="Button1_Click" />
+                                                        <asp:Button ID="Button2" runat="server" Text="Submit" class="btn btn-add btn-sm" OnClick="Button2_Click" />
                                                           
                                                         <asp:Label ID="lblerrormsg" runat="server" Text="" ForeColor="Red" class="control-label"></asp:Label>
                                                     </div>

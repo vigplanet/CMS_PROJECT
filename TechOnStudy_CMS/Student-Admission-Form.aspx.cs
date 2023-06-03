@@ -109,7 +109,7 @@ namespace TechOnStudy_CMS
             else
             {
                 #region PHOTO
-                string img_photo = "", img_signature = "", img_id = "";
+                string img_photo = "", img_signature = "", img_id = "", img_admitcard = "";
                 try
                 {
                     if (file_photo.HasFile)
@@ -186,6 +186,34 @@ namespace TechOnStudy_CMS
                 }
                 catch { }
                 #endregion
+
+
+                #region img_admitcatd            
+                try
+                {
+                    if (file_admitcard.HasFile)
+                    {
+                        string PDFVDfilename = Path.GetFileName(file_admitcard.PostedFile.FileName);
+                        string ext = Path.GetExtension(PDFVDfilename);
+                        Guid obj = Guid.NewGuid();
+                        img_admitcard = obj.ToString() + ext;
+                        //if (ext == ".pdf")
+                        {
+                            if (File.Exists(Server.MapPath("~/Upload/" + img_admitcard)))
+                            {
+                                File.Delete(Server.MapPath("~/Upload/" + img_admitcard));
+                            }
+                            file_photo.SaveAs(Server.MapPath("~/Upload/" + img_admitcard));
+                        }
+                    }
+                    else
+                    {
+                        img_admitcard = "";
+                    }
+                }
+                catch { }
+                #endregion
+
                 DataTable dtt = new DataTable();
                 try
                 {
@@ -199,7 +227,7 @@ namespace TechOnStudy_CMS
                         obj.AddParameters("@UpscRollNo", txtUpscRollno.Text);
                         obj.AddParameters("@EMAILID", txtemaiid.Text);
                         obj.AddParameters("@CONTACTNO", txtcontactno.Text);
-                        obj.AddParameters("@ISHANDICAPPED", (chk_handicapped.Checked == true ? 1 : 0));
+                        obj.AddParameters("@ISHANDICAPPED", 0);
                         obj.AddParameters("@FATHERSNAME", txtfathername.Text);
                         obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
                         obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
@@ -233,6 +261,7 @@ namespace TechOnStudy_CMS
                         obj.AddParameters("@PHOTOS", img_photo);
                         obj.AddParameters("@SIGNATURE", img_signature);
                         obj.AddParameters("@IDPROOF", img_id);
+                        obj.AddParameters("@ADMITCARD", img_admitcard);
                         obj.AddParameters("@IS_AGREE", 1);
                         obj.AddParameters("@CreatedDatetime", DateTime.Now);
                         obj.AddParameters("@CreatedIpAddress", "");
