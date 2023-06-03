@@ -230,7 +230,7 @@ namespace TechOnStudy_CMS
                         obj.AddParameters("@ISHANDICAPPED", 0);
                         obj.AddParameters("@FATHERSNAME", txtfathername.Text);
                         obj.AddParameters("@OCCUPATION", txtOCCUPATION.Text);
-                        obj.AddParameters("@MOCCUPATION", txtOCCUPATION.Text);
+                        obj.AddParameters("@MOCCUPATION", txtmother_OCCUPATION.Text);
 
                         obj.AddParameters("@PA_LINE", txtPERMANENT_ADDRESS.Text);
                         obj.AddParameters("@PA_CITY_TOWN", txtCity.Text);
