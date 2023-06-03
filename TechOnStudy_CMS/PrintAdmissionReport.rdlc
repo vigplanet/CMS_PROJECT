@@ -110,7 +110,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OCCUPATION :</Value>
+                <Value>FATHER'S OCCUPATION :</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -124,7 +124,7 @@
         <rd:DefaultName>Textbox42</rd:DefaultName>
         <Top>2.95361in</Top>
         <Left>4.25222in</Left>
-        <Height>0.25in</Height>
+        <Height>0.375in</Height>
         <Width>1.14361in</Width>
         <ZIndex>3</ZIndex>
         <Style>
@@ -1021,7 +1021,7 @@
         <Top>1.45361in</Top>
         <Left>1.45014in</Left>
         <Height>0.25in</Height>
-        <Width>2.71999in</Width>
+        <Width>4.39707in</Width>
         <ZIndex>29</ZIndex>
         <Style>
           <Border>
@@ -1054,7 +1054,7 @@
         <Top>1.74528in</Top>
         <Left>1.45014in</Left>
         <Height>0.25in</Height>
-        <Width>2.71999in</Width>
+        <Width>4.39707in</Width>
         <ZIndex>30</ZIndex>
         <Style>
           <Border>
@@ -1867,7 +1867,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!OPTIONAL_SUBJECT_CSENAME.Value, "DataSet1")</Value>
+                <Value>=First(Fields!E_STREAMNAME.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -2064,7 +2064,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Declaration: I hereby declare that all the information contained in the form is true and i shall abide by all the rules and regulations of the institute</Value>
+                <Value>Declaration: I hereby declare that all the information contained in the form is true and i shall abide by all the rules and regulations of the institute.</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2360,6 +2360,7 @@
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2378,6 +2379,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>#ff5623</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
