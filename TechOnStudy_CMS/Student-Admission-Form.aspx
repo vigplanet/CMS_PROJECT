@@ -59,7 +59,7 @@
                                                
                                                 <div class="col-md-2 form-group">
                                                     <label class="control-label">DOB : *</label>
-                                                    <asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control" disabled></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="txtdob" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 
                                                 </div>
