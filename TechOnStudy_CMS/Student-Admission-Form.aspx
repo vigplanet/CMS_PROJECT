@@ -136,7 +136,7 @@
 
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CITY/TOWN </label>
-                                                    <asp:TextBox ID="txtCity" runat="server" placeholder="City/Town" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCity" runat="server" placeholder="City/Town" class="form-control" autocomplete="off"></asp:TextBox>
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
@@ -185,7 +185,7 @@
 
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CITY/TOWN </label>
-                                                    <asp:TextBox ID="txt_cd_city" runat="server" placeholder="CITY/TOWN" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txt_cd_city" runat="server" placeholder="CITY/TOWN" class="form-control" autocomplete="off"></asp:TextBox>
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
@@ -218,7 +218,7 @@
                                                 COURSE DETAILS
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-3 form-group">
+                                                <div class="col-md-2 form-group">
                                                     <label class="control-label">SESSION  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
@@ -250,21 +250,20 @@
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 form-group">
+                                                <div class="col-md-2 form-group">
                                                     <label class="control-label">BATCH TYPE :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
                                                         <asp:DropDownList ID="ddl_batch" runat="server" class="form-control">
                                                             <asp:ListItem Text="---Select---" Value="0">---Select---</asp:ListItem>
-                                                            <asp:ListItem Text="Online Classes" Value="1">Online Classes</asp:ListItem>
-                                                            <asp:ListItem Text="Online test Series" Value="2">Online test Series</asp:ListItem>
+                                                            <asp:ListItem Text="Online Classes" Value="1">Online</asp:ListItem>
+                                                            <asp:ListItem Text="Online test Series" Value="2">Offline</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-md-3 form-group">
-                                                    <label class="control-label">STREAM  :*</label>
+                                                 <div class="col-md-3 form-group">
+                                                    <label class="control-label">OPTIONAL SUBJECT  :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
 
@@ -274,7 +273,8 @@
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 form-group">
+                                               
+                                                <div class="col-md-2 form-group">
                                                     <label class="control-label">UPSC Roll No  :</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
@@ -344,7 +344,7 @@
                                                     <label class="control-label">MARKS IN % *</label>
                                                     <asp:TextBox ID="txtmarks" runat="server" placeholder="Marks in %" class="form-control"></asp:TextBox>
                                                 </div>
-                                                <div class="col-md-3 form-group">
+                                                <%--<div class="col-md-3 form-group">
                                                     <label class="control-label">OPTIONAL SUBJECT IN CSE :*</label>
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
@@ -354,7 +354,7 @@
                                                             <asp:ListItem Text="Sociology" Value="1">Sociology</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
-                                                </div>
+                                                </div>--%>
 
                                             </div>
 

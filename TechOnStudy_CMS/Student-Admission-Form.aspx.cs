@@ -257,7 +257,7 @@ namespace TechOnStudy_CMS
 
                         obj.AddParameters("@PASSING_YEAR", txtpassingyear.Text);
                         obj.AddParameters("@MARKS_PER", txtmarks.Text);
-                        obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", ddloptonalsubject.SelectedValue);
+                        obj.AddParameters("@OPTIONAL_SUBJECT_CSEID", 0);
                         obj.AddParameters("@PHOTOS", img_photo);
                         obj.AddParameters("@SIGNATURE", img_signature);
                         obj.AddParameters("@IDPROOF", img_id);

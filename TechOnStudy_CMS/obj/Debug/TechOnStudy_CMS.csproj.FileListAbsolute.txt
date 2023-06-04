@@ -319,13 +319,11 @@ D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.DataVisualization.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.ReportViewer.WebForms.dll
-D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\CkEditor.pdb
-D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\CKEditor.NET.pdb
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.AssemblyReference.cache
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\RdlCompile.cache
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\RdlCompile.compiled
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.CoreCompileInputs.cache
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.CopyComplete
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.dll
 D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.pdb
+D:\CompletedProject\Completed Working\tech-On-Study\Working Projects\TechOnStudy_Project\CMS\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.AssemblyReference.cache

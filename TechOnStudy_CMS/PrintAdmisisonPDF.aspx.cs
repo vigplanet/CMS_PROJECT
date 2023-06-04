@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,6 +33,46 @@ namespace TechOnStudy_CMS
                     ReportViewer1.LocalReport.DataSources.Add(datasource1);
                     ReportViewer1.LocalReport.EnableExternalImages = true;
                     ReportViewer1.LocalReport.ReportPath = "PrintAdmissionReport.rdlc";
+
+
+                    Warning[] warnings;
+                    string[] streamIds;
+                    string mimeType = string.Empty;
+                    string encoding = string.Empty;
+                    string extension = string.Empty;
+                    Response.Buffer = true;
+                    Response.Clear();
+                    Response.AppendHeader("content-disposition", "attachement filename=FILES.pdf");
+                    Response.ContentType = "application/PDF";
+
+                    ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                    ReportViewer1.LocalReport.EnableExternalImages = true;
+                    byte[] bytes = ReportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
+                    string subPath = "FILES";
+                    bool exists = System.IO.Directory.Exists(HttpContext.Current.Server.MapPath(subPath));
+
+                    if (exists)
+                    {
+                        System.IO.FileStream fs = System.IO.File.Create(HttpContext.Current.Server.MapPath(subPath + "/" + dt.Tables[0].Rows[0]["EnrollNo"].ToString() + ".pdf"));
+                        fs.Write(bytes, 0, bytes.Length);
+                        fs.Close();
+                    }
+                    else
+                    {
+                        System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath(subPath));
+                        System.IO.FileStream fs = System.IO.File.Create(HttpContext.Current.Server.MapPath(subPath + "/" + dt.Tables[0].Rows[0]["EnrollNo"].ToString() + ".pdf"));
+                        fs.Write(bytes, 0, bytes.Length);
+                        fs.Close();
+                    }
+
+
+                    bytes = File.ReadAllBytes(HttpContext.Current.Server.MapPath(subPath + "/" + dt.Tables[0].Rows[0]["EnrollNo"].ToString() + ".pdf"));
+                    // File.Delete(HttpContext.Current.Server.MapPath(subPath + "/" + doc_sno + "-DEED" + ".pdf"));
+
+                    Response.BinaryWrite(bytes);
+                    Response.Flush();
+
+
                 }
             }
         }

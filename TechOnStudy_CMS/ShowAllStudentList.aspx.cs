@@ -168,6 +168,8 @@ namespace TechOnStudy_CMS
                 case ".jpg":
                 case "jpeg":
                     return "image/jpeg";
+                case ".png":
+                    return "image/png";
                 case ".bmp":
                     return "image/bmp";
                 case ".wav":
