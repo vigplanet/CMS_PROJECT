@@ -69,7 +69,11 @@ namespace TechOnStudy_CMS
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[rowIndex];
-                string Photos = row.Cells[34].Text;
+                DataSet dt = new DataSet();
+                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+
+                string Photos = dt.Tables[0].Rows[0]["PHOTOS"].ToString();
                 string PhotoUrl = new Uri(Server.MapPath("~/Upload/PHOTO/" + Photos)).AbsoluteUri;               
                 string fileExtention = Path.GetExtension(PhotoUrl);
                 WebClient client = new WebClient();
@@ -83,7 +87,11 @@ namespace TechOnStudy_CMS
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[rowIndex];
-                string Photos = row.Cells[35].Text;
+                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+                DataSet dt = new DataSet();
+                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+
+                string Photos = dt.Tables[0].Rows[0]["SIGNATURE"].ToString();
                 string PhotoUrl = new Uri(Server.MapPath("~/Upload/SIGNATURE/" + Photos)).AbsoluteUri;
                 string fileExtention = Path.GetExtension(PhotoUrl);
                 WebClient client = new WebClient();
@@ -97,7 +105,11 @@ namespace TechOnStudy_CMS
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[rowIndex];
-                string Photos = row.Cells[36].Text;
+                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+                DataSet dt = new DataSet();
+                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+
+                string Photos = dt.Tables[0].Rows[0]["IDPROOF"].ToString();
                 string PhotoUrl = new Uri(Server.MapPath("~/Upload/IDPROOF/" + Photos)).AbsoluteUri;
                 string fileExtention = Path.GetExtension(PhotoUrl);
                 WebClient client = new WebClient();
@@ -110,8 +122,12 @@ namespace TechOnStudy_CMS
             if (e.CommandName == "AdmitCard")
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[rowIndex];
-                string Photos = row.Cells[39].Text;
+                GridViewRow row = GridView1.Rows[rowIndex]; DataSet dt = new DataSet();
+                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+
+
+                string Photos = dt.Tables[0].Rows[0]["ADMITCARD"].ToString();
                 string PhotoUrl = new Uri(Server.MapPath("~/Upload/" + Photos)).AbsoluteUri;
                 string fileExtention = Path.GetExtension(PhotoUrl);
                 WebClient client = new WebClient();
