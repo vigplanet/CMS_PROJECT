@@ -1937,9 +1937,9 @@
       </Textbox>
       <Line Name="Line1">
         <Top>5.54042in</Top>
-        <Left>0.06788in</Left>
+        <Left>0.11455in</Left>
         <Height>0in</Height>
-        <Width>7.76417in</Width>
+        <Width>7.67584in</Width>
         <ZIndex>58</ZIndex>
         <Style>
           <Border>
@@ -1949,9 +1949,9 @@
       </Line>
       <Line Name="Line2">
         <Top>3.56473in</Top>
-        <Left>0.06788in</Left>
+        <Left>0.11455in</Left>
         <Height>0in</Height>
-        <Width>7.76417in</Width>
+        <Width>7.67584in</Width>
         <ZIndex>59</ZIndex>
         <Style>
           <Border>
@@ -1979,9 +1979,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>8.82837in</Top>
-        <Left>0.06788in</Left>
+        <Left>0.21875in</Left>
         <Height>0.41667in</Height>
-        <Width>7.82861in</Width>
+        <Width>7.5275in</Width>
         <ZIndex>60</ZIndex>
         <Style>
           <Border>
@@ -2340,9 +2340,9 @@
       </Textbox>
       <Line Name="Line4">
         <Top>4.51605in</Top>
-        <Left>0.06788in</Left>
+        <Left>0.11455in</Left>
         <Height>0in</Height>
-        <Width>7.76417in</Width>
+        <Width>7.67584in</Width>
         <ZIndex>72</ZIndex>
         <Style>
           <Border>
@@ -2352,8 +2352,9 @@
       </Line>
       <Line Name="Line5">
         <Top>8.79402in</Top>
+        <Left>0.21875in</Left>
         <Height>0in</Height>
-        <Width>7.93816in</Width>
+        <Width>7.54264in</Width>
         <ZIndex>73</ZIndex>
         <Style>
           <Border>
@@ -2452,7 +2453,7 @@
     <Height>10.81233in</Height>
     <Style />
   </Body>
-  <Width>7.94009in</Width>
+  <Width>7.93816in</Width>
   <Page>
     <LeftMargin>0.3in</LeftMargin>
     <Style />

@@ -378,7 +378,7 @@
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* ID PROOF required" ControlToValidate="file_id" ForeColor="Red" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
-                                                    <label class="control-label">UPLOAD ID UPSC ADMIT CARD : </label>
+                                                    <label class="control-label">UPLOAD UPSC ADMIT CARD : </label>
                                                     <asp:FileUpload ID="file_admitcard" runat="server" />                                                    
                                                 </div>
                                             </div>
