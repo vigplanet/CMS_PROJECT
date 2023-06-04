@@ -2485,6 +2485,7 @@
     <Content Include="index.aspx" />
     <Content Include="PrintAdmisisonPDF.aspx" />
     <Content Include="productlist.aspx" />
+    <Content Include="ShowAllStudentList.aspx" />
     <Content Include="Student-Admission-Form.aspx" />
     <Content Include="Upload\calender.png" />
     <Content Include="Web.config" />
@@ -2581,6 +2582,13 @@
       <DependentUpon>productlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowAllStudentList.aspx.cs">
+      <DependentUpon>ShowAllStudentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllStudentList.aspx.designer.cs">
+      <DependentUpon>ShowAllStudentList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student-Admission-Form.aspx.cs">
       <DependentUpon>Student-Admission-Form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

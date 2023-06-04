@@ -223,7 +223,7 @@ namespace TechOnStudy_CMS
                         obj.AddParameters("@CANDIDATENAME", txtcandidatename.Text);
                         obj.AddParameters("@GENDER", rdogender.SelectedValue);
                         obj.AddParameters("@CATEGORY", ddlcategory.SelectedValue);
-                        obj.AddParameters("@DOB", txtdob.Text);
+                        obj.AddParameters("@DOB", birthdaytime.Value);
                         obj.AddParameters("@UpscRollNo", txtUpscRollno.Text);
                         obj.AddParameters("@EMAILID", txtemaiid.Text);
                         obj.AddParameters("@CONTACTNO", txtcontactno.Text);

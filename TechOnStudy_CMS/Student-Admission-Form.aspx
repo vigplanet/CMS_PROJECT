@@ -58,10 +58,11 @@
                                             
                                                
                                                 <div class="col-md-2 form-group">
-                                                    <label class="control-label">DOB : *</label>
-                                                    <asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control" disabled></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="txtdob" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                
+                                                    <label class="control-label">DOB : *</label><br />
+                                                    <%--<asp:TextBox ID="txtdob" runat="server" placeholder="Date Of Birth" CssClass="Calender form-control" disabled></asp:TextBox>--%>
+                                                    <input type="date" id="birthdaytime" name="birthdaytime" runat="server" CssClass="form-control" />
+                                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="txtdob" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                --%>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -243,9 +244,9 @@
                                                     <!-- <input type="text" placeholder="Degree/Cource" class="form-control"> -->
                                                     <div class="input-group">
                                                         <asp:DropDownList ID="ddlcourse" runat="server" class="form-control">
-                                                            <asp:ListItem Text="---SELECT---" Value="1">---SELECT---</asp:ListItem>
-                                                            <asp:ListItem Text="Sociology Foundation Batch" Value="2">Sociology Foundation Batch</asp:ListItem>
-                                                            <asp:ListItem Text="Sociology 500+Test Series" Value="3">Sociology 500+Test Series</asp:ListItem>
+                                                            <asp:ListItem Text="---SELECT---" Value="0">---SELECT---</asp:ListItem>
+                                                            <asp:ListItem Text="Sociology Foundation Batch" Value="1">Sociology Foundation Batch</asp:ListItem>
+                                                            <asp:ListItem Text="Sociology 500+Test Series" Value="2">Sociology 500+Test Series</asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>

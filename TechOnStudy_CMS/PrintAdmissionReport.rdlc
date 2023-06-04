@@ -110,7 +110,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>FATHER'S OCCUPATION :</Value>
+                <Value>MOTHER'S OCCUPATION :</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -144,7 +144,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>MOTHER'S OCCUP. :</Value>
+                <Value>FATHER'S OCCUP. :</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -849,8 +849,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>3.94661in</Top>
-        <Left>4.31025in</Left>
+        <Top>4.39105in</Top>
+        <Left>4.33306in</Left>
         <Height>0.25in</Height>
         <Width>1.12972in</Width>
         <ZIndex>24</ZIndex>
@@ -1183,10 +1183,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MOCCUPATION</rd:DefaultName>
-        <Top>2.95361in</Top>
-        <Left>1.46279in</Left>
+        <Top>2.9675in</Top>
+        <Left>5.47667in</Left>
         <Height>0.25in</Height>
-        <Width>2.71999in</Width>
+        <Width>2.21999in</Width>
         <ZIndex>34</ZIndex>
         <Style>
           <Border>
@@ -1316,7 +1316,7 @@
         </Paragraphs>
         <rd:DefaultName>PA_StateName</rd:DefaultName>
         <Top>2.95361in</Top>
-        <Left>5.42236in</Left>
+        <Left>1.42236in</Left>
         <Height>0.25in</Height>
         <Width>2.33778in</Width>
         <ZIndex>38</ZIndex>
@@ -1634,7 +1634,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!BATCH_TYPENAME.Value, "DataSet1")</Value>
+                <Value>=First(Fields!CName.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1733,7 +1733,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!E_STREAMNAME.Value, "DataSet1")</Value>
+                <Value>=First(Fields!BATCH_TYPENAME.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1878,8 +1878,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>OPTIONAL_SUBJECT_CSENAME</rd:DefaultName>
-        <Top>3.94661in</Top>
-        <Left>5.45386in</Left>
+        <Top>4.39105in</Top>
+        <Left>5.47667in</Left>
         <Height>0.25in</Height>
         <Width>2.33653in</Width>
         <ZIndex>55</ZIndex>
@@ -2462,7 +2462,7 @@
     <Height>9.17708in</Height>
     <Style />
   </Body>
-  <Width>7.94667in</Width>
+  <Width>7.92583in</Width>
   <Page>
     <LeftMargin>0.3in</LeftMargin>
     <Style />
