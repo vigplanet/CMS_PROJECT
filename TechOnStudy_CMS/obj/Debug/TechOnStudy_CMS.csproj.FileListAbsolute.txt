@@ -115,8 +115,6 @@ E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\roslyn\vbc.rsp
 E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\roslyn\VBCSCompiler.exe
 E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\roslyn\VBCSCompiler.exe.config
 E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\CkEditor.pdb
-E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\CKEditor.NET.pdb
 E:\test\CMS_PROJECT\TechOnStudy_CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\test\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.AssemblyReference.cache
 E:\test\CMS_PROJECT\TechOnStudy_CMS\obj\Debug\TechOnStudy_CMS.csproj.CoreCompileInputs.cache

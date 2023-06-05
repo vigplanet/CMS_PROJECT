@@ -269,7 +269,12 @@ namespace TechOnStudy_CMS
                         dtt = obj.ReturnDataTable();
                     }
                     //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Saves Successfully')", true);
-                    Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
+                   // Response.Redirect("PrintAdmisisonPDF.aspx?id=" + dtt.Rows[0][0].ToString());
+
+                    ClientScriptManager CSM = Page.ClientScript;
+
+                    string strconfirm = "<script>if(window.confirm('Your Form Submit Saved Successfully')){window.location.href='Student-Admission-Form.aspx'}</script>";
+                    CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
 
                 }
                 catch (Exception ex) { }
