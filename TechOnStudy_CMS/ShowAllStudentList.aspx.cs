@@ -65,142 +65,170 @@ namespace TechOnStudy_CMS
 
                 //  ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Name: " + name + "\\nCountry: " + country + "');", true);
             }
-            if (e.CommandName == "Photo")
-            {
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[rowIndex];
-                DataSet dt = new DataSet();
-                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
-                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
 
-                string Photos = dt.Tables[0].Rows[0]["PHOTOS"].ToString();
-                string PhotoUrl = new Uri(Server.MapPath("~/Upload/PHOTO/" + Photos)).AbsoluteUri;               
-                string fileExtention = Path.GetExtension(PhotoUrl);
-                WebClient client = new WebClient();
-                Byte[] buffer = client.DownloadData(PhotoUrl);  
-                Response.ContentType = ReturnExtension(fileExtention);
+            //if (e.CommandName == "Delete")
+            //{
+            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
+            //    GridViewRow row = GridView1.Rows[rowIndex];
+            //    DataSet dt = new DataSet();
+            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+            //    //dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+            //    bl.ExecNonQueryProc("delete from StudentAdmissionForm where id=" + userid);
 
-                Response.AddHeader("content-length", buffer.Length.ToString());
-                Response.BinaryWrite(buffer);
-            }
-            if (e.CommandName == "Sign")
-            {
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[rowIndex];
-                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
-                DataSet dt = new DataSet();
-                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+            //}
+            //if (e.CommandName == "Photo")
+            //{
+            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
+            //    GridViewRow row = GridView1.Rows[rowIndex];
+            //    DataSet dt = new DataSet();
+            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+            //    dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
 
-                string Photos = dt.Tables[0].Rows[0]["SIGNATURE"].ToString();
-                string PhotoUrl = new Uri(Server.MapPath("~/Upload/SIGNATURE/" + Photos)).AbsoluteUri;
-                string fileExtention = Path.GetExtension(PhotoUrl);
-                WebClient client = new WebClient();
-                Byte[] buffer = client.DownloadData(PhotoUrl);
-                Response.ContentType = ReturnExtension(fileExtention);
+            //    string Photos = dt.Tables[0].Rows[0]["PHOTOS"].ToString();
+            //    string PhotoUrl = new Uri(Server.MapPath("~/Upload/PHOTO/" + Photos)).AbsoluteUri;
+            //    string fileExtention = Path.GetExtension(PhotoUrl);
+            //    WebClient client = new WebClient();
+            //    Byte[] buffer = client.DownloadData(PhotoUrl);
+            //    Response.ContentType = ReturnExtension(fileExtention);
 
-                Response.AddHeader("content-length", buffer.Length.ToString());
-                Response.BinaryWrite(buffer);
-            }
-            if (e.CommandName == "Id")
-            {
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[rowIndex];
-                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
-                DataSet dt = new DataSet();
-                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+            //    Response.AddHeader("content-length", buffer.Length.ToString());
+            //    Response.BinaryWrite(buffer);
+            //}
+            //if (e.CommandName == "Sign")
+            //{
+            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
+            //    GridViewRow row = GridView1.Rows[rowIndex];
+            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+            //    DataSet dt = new DataSet();
+            //    dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
 
-                string Photos = dt.Tables[0].Rows[0]["IDPROOF"].ToString();
-                string PhotoUrl = new Uri(Server.MapPath("~/Upload/IDPROOF/" + Photos)).AbsoluteUri;
-                string fileExtention = Path.GetExtension(PhotoUrl);
-                WebClient client = new WebClient();
-                Byte[] buffer = client.DownloadData(PhotoUrl);
-                Response.ContentType = ReturnExtension(fileExtention);
+            //    string Photos = dt.Tables[0].Rows[0]["SIGNATURE"].ToString();
+            //    string PhotoUrl = new Uri(Server.MapPath("~/Upload/SIGNATURE/" + Photos)).AbsoluteUri;
+            //    string fileExtention = Path.GetExtension(PhotoUrl);
+            //    WebClient client = new WebClient();
+            //    Byte[] buffer = client.DownloadData(PhotoUrl);
+            //    Response.ContentType = ReturnExtension(fileExtention);
 
-                Response.AddHeader("content-length", buffer.Length.ToString());
-                Response.BinaryWrite(buffer);
-            }
-            if (e.CommandName == "AdmitCard")
-            {
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[rowIndex]; DataSet dt = new DataSet();
-                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
-                dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+            //    Response.AddHeader("content-length", buffer.Length.ToString());
+            //    Response.BinaryWrite(buffer);
+            //}
+            //if (e.CommandName == "Id")
+            //{
+            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
+            //    GridViewRow row = GridView1.Rows[rowIndex];
+            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+            //    //DataSet dt = new DataSet();
+            //    //dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+
+            //    //string Photos = dt.Tables[0].Rows[0]["IDPROOF"].ToString();
+            //    //string PhotoUrl = new Uri(Server.MapPath("~/Upload/IDPROOF/" + Photos)).AbsoluteUri;
+
+            //    Response.Redirect("ShowId.aspx?Id=" + userid);
+
+            //    //string fileExtention = Path.GetExtension(PhotoUrl);
+            //    //WebClient client = new WebClient();
+            //    //Byte[] buffer = client.DownloadData(PhotoUrl);
+            //    //Response.ContentType = ReturnExtension(fileExtention);
+
+            //    //Response.AddHeader("content-length", buffer.Length.ToString());
+            //    //Response.BinaryWrite(buffer);
+            //}
+            //if (e.CommandName == "AdmitCard")
+            //{
+            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
+            //    GridViewRow row = GridView1.Rows[rowIndex]; DataSet dt = new DataSet();
+            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+            //    dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
 
 
-                string Photos = dt.Tables[0].Rows[0]["ADMITCARD"].ToString();
-                string PhotoUrl = new Uri(Server.MapPath("~/Upload/" + Photos)).AbsoluteUri;
-                string fileExtention = Path.GetExtension(PhotoUrl);
-                WebClient client = new WebClient();
-                Byte[] buffer = client.DownloadData(PhotoUrl);
-                Response.ContentType = ReturnExtension(fileExtention);
+            //    string Photos = dt.Tables[0].Rows[0]["ADMITCARD"].ToString();
+            //    string PhotoUrl = new Uri(Server.MapPath("~/Upload/" + Photos)).AbsoluteUri;
+            //    string fileExtention = Path.GetExtension(PhotoUrl);
+            //    WebClient client = new WebClient();
+            //    Byte[] buffer = client.DownloadData(PhotoUrl);
+            //    Response.ContentType = ReturnExtension(fileExtention);
 
-                Response.AddHeader("content-length", buffer.Length.ToString());
-                Response.BinaryWrite(buffer);
-            }
+            //    Response.AddHeader("content-length", buffer.Length.ToString());
+            //    Response.BinaryWrite(buffer);
+            //}
         }
 
-        private string ReturnExtension(string fileExtension)
+        //private string ReturnExtension(string fileExtension)
+        //{
+        //    switch (fileExtension)
+        //    {
+        //        case ".htm":
+        //        case ".html":
+        //        case ".log":
+        //            return "text/HTML";
+        //        case ".txt":
+        //            return "text/plain";
+        //        case ".doc":
+        //            return "application/ms-word";
+        //        case ".tiff":
+        //        case ".tif":
+        //            return "image/tiff";
+        //        case ".asf":
+        //            return "video/x-ms-asf";
+        //        case ".avi":
+        //            return "video/avi";
+        //        case ".zip":
+        //            return "application/zip";
+        //        case ".xls":
+        //        case ".csv":
+        //            return "application/vnd.ms-excel";
+        //        case ".gif":
+        //            return "image/gif";
+        //        case ".jpg":
+        //        case "jpeg":
+        //            return "image/jpeg";
+        //        case ".png":
+        //            return "image/png";
+        //        case ".bmp":
+        //            return "image/bmp";
+        //        case ".wav":
+        //            return "audio/wav";
+        //        case ".mp3":
+        //            return "audio/mpeg3";
+        //        case ".mpg":
+        //        case "mpeg":
+        //            return "video/mpeg";
+        //        case ".rtf":
+        //            return "application/rtf";
+        //        case ".asp":
+        //            return "text/asp";
+        //        case ".pdf":
+        //            return "application/pdf";
+        //        case ".fdf":
+        //            return "application/vnd.fdf";
+        //        case ".ppt":
+        //            return "application/mspowerpoint";
+        //        case ".dwg":
+        //            return "image/vnd.dwg";
+        //        case ".msg":
+        //            return "application/msoutlook";
+        //        case ".xml":
+        //        case ".sdxl":
+        //            return "application/xml";
+        //        case ".xdp":
+        //            return "application/vnd.adobe.xdp+xml";
+        //        default:
+        //            return "application/octet-stream";
+        //    }
+        //}
+
+        protected void GridView1_RowDeleted(object sender, GridViewDeletedEventArgs e)
         {
-            switch (fileExtension)
-            {
-                case ".htm":
-                case ".html":
-                case ".log":
-                    return "text/HTML";
-                case ".txt":
-                    return "text/plain";
-                case ".doc":
-                    return "application/ms-word";
-                case ".tiff":
-                case ".tif":
-                    return "image/tiff";
-                case ".asf":
-                    return "video/x-ms-asf";
-                case ".avi":
-                    return "video/avi";
-                case ".zip":
-                    return "application/zip";
-                case ".xls":
-                case ".csv":
-                    return "application/vnd.ms-excel";
-                case ".gif":
-                    return "image/gif";
-                case ".jpg":
-                case "jpeg":
-                    return "image/jpeg";
-                case ".png":
-                    return "image/png";
-                case ".bmp":
-                    return "image/bmp";
-                case ".wav":
-                    return "audio/wav";
-                case ".mp3":
-                    return "audio/mpeg3";
-                case ".mpg":
-                case "mpeg":
-                    return "video/mpeg";
-                case ".rtf":
-                    return "application/rtf";
-                case ".asp":
-                    return "text/asp";
-                case ".pdf":
-                    return "application/pdf";
-                case ".fdf":
-                    return "application/vnd.fdf";
-                case ".ppt":
-                    return "application/mspowerpoint";
-                case ".dwg":
-                    return "image/vnd.dwg";
-                case ".msg":
-                    return "application/msoutlook";
-                case ".xml":
-                case ".sdxl":
-                    return "application/xml";
-                case ".xdp":
-                    return "application/vnd.adobe.xdp+xml";
-                default:
-                    return "application/octet-stream";
-            }
+
+         
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];            
+            string userid = GridView1.DataKeys[e.RowIndex].Value.ToString();
+            bl.ExecNonQuery("delete from StudentAdmissionForm where id=" + userid);
+            FillDataBind();
         }
     }
 }

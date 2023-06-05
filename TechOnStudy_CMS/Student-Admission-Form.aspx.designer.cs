@@ -447,15 +447,6 @@ namespace TechOnStudy_CMS
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// file_admitcard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_admitcard;
-
-        /// <summary>
         /// CheckBox3 control.
         /// </summary>
         /// <remarks>

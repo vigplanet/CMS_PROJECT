@@ -2486,8 +2486,15 @@
     <Content Include="PrintAdmisisonPDF.aspx" />
     <Content Include="productlist.aspx" />
     <Content Include="ShowAllStudentList.aspx" />
+    <Content Include="ShowId.aspx" />
     <Content Include="Student-Admission-Form.aspx" />
     <Content Include="Upload\calender.png" />
+    <Content Include="Upload\ID\0118faf2-ba1e-4041-8ef6-825885393831.jpg" />
+    <Content Include="Upload\ID\062cc436-ee0a-42f9-a18f-f7ba0f14d33e.jpg" />
+    <Content Include="Upload\ID\28430351-286e-4e50-a8b3-181b9fd2a3b0.jpeg" />
+    <Content Include="Upload\ID\4c23d27f-dccc-4be6-ac7c-e52496e672fb.jpg" />
+    <Content Include="Upload\ID\601aa712-a651-495c-bd72-3508f803d161.jpg" />
+    <Content Include="Upload\ID\ddae8c94-2999-4122-99de-c28fb7d68e00.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -2588,6 +2595,13 @@
     </Compile>
     <Compile Include="ShowAllStudentList.aspx.designer.cs">
       <DependentUpon>ShowAllStudentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowId.aspx.cs">
+      <DependentUpon>ShowId.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowId.aspx.designer.cs">
+      <DependentUpon>ShowId.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student-Admission-Form.aspx.cs">
       <DependentUpon>Student-Admission-Form.aspx</DependentUpon>
@@ -2834,7 +2848,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\plugins\New folder\" />
-    <Folder Include="Upload\ID\" />
     <Folder Include="Upload\PHOTO\" />
     <Folder Include="Upload\SIGNATURE\" />
   </ItemGroup>

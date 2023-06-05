@@ -188,31 +188,31 @@ namespace TechOnStudy_CMS
                 #endregion
 
 
-                #region img_admitcatd            
-                try
-                {
-                    if (file_admitcard.HasFile)
-                    {
-                        string PDFVDfilename = Path.GetFileName(file_admitcard.PostedFile.FileName);
-                        string ext = Path.GetExtension(PDFVDfilename);
-                        Guid obj = Guid.NewGuid();
-                        img_admitcard = obj.ToString() + ext;
-                        //if (ext == ".pdf")
-                        {
-                            if (File.Exists(Server.MapPath("~/Upload/" + img_admitcard)))
-                            {
-                                File.Delete(Server.MapPath("~/Upload/" + img_admitcard));
-                            }
-                            file_photo.SaveAs(Server.MapPath("~/Upload/" + img_admitcard));
-                        }
-                    }
-                    else
-                    {
-                        img_admitcard = "";
-                    }
-                }
-                catch { }
-                #endregion
+                //#region img_admitcatd            
+                //try
+                //{
+                //    if (file_admitcard.HasFile)
+                //    {
+                //        string PDFVDfilename = Path.GetFileName(file_admitcard.PostedFile.FileName);
+                //        string ext = Path.GetExtension(PDFVDfilename);
+                //        Guid obj = Guid.NewGuid();
+                //        img_admitcard = obj.ToString() + ext;
+                //        //if (ext == ".pdf")
+                //        {
+                //            if (File.Exists(Server.MapPath("~/Upload/" + img_admitcard)))
+                //            {
+                //                File.Delete(Server.MapPath("~/Upload/" + img_admitcard));
+                //            }
+                //            file_photo.SaveAs(Server.MapPath("~/Upload/" + img_admitcard));
+                //        }
+                //    }
+                //    else
+                //    {
+                //        img_admitcard = "";
+                //    }
+                //}
+                //catch { }
+                //#endregion
 
                 DataTable dtt = new DataTable();
                 try
@@ -261,7 +261,7 @@ namespace TechOnStudy_CMS
                         obj.AddParameters("@PHOTOS", img_photo);
                         obj.AddParameters("@SIGNATURE", img_signature);
                         obj.AddParameters("@IDPROOF", img_id);
-                        obj.AddParameters("@ADMITCARD", img_admitcard);
+                        obj.AddParameters("@ADMITCARD", "");
                         obj.AddParameters("@IS_AGREE", 1);
                         obj.AddParameters("@CreatedDatetime", DateTime.Now);
                         obj.AddParameters("@CreatedIpAddress", "");
@@ -273,7 +273,7 @@ namespace TechOnStudy_CMS
 
                     ClientScriptManager CSM = Page.ClientScript;
 
-                    string strconfirm = "<script>if(window.confirm('Your Form Submit Saved Successfully')){window.location.href='Student-Admission-Form.aspx'}</script>";
+                    string strconfirm = "<script>if(window.confirm('Your Form Submitted Successfully')){window.location.href='Student-Admission-Form.aspx'}</script>";
                     CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
 
                 }

@@ -40,8 +40,8 @@
                             <div class="table-responsive">
 
                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" class="table table-bordered table-striped table-hover"
-                                    EmptyDataText="!!! No Data Found !!!" OnRowEditing="GridView1_RowEditing" DataKeyNames="id" OnRowCommand="GridView1_RowCommand"
-                                    ForeColor="#333333" Width="800px">
+                                    EmptyDataText="!!! No Data Found !!!"  DataKeyNames="id" OnRowCommand="GridView1_RowCommand"
+                                    ForeColor="#333333" Width="800px" OnRowDeleting="GridView1_RowDeleting">
                                     <Columns>
                                         <asp:TemplateField>
                                             <HeaderTemplate>
@@ -51,7 +51,8 @@
                                                 <asp:Button Text="Print" runat="server" CommandName="Print" CommandArgument="<%# Container.DataItemIndex %>" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField>
+                                         <asp:CommandField ShowDeleteButton="true" /> 
+                                      <%--  <asp:TemplateField>
                                             <HeaderTemplate>
                                                 Show Photo
                                             </HeaderTemplate>
@@ -66,7 +67,7 @@
                                             <ItemTemplate>
                                                 <asp:Button Text="Show Sign" runat="server" CommandName="Sign" CommandArgument="<%# Container.DataItemIndex %>" />
                                             </ItemTemplate>
-                                        </asp:TemplateField>
+                                        </asp:TemplateField>--%>
                                         <asp:TemplateField>
                                              <HeaderTemplate>
                                               Show ID
@@ -75,14 +76,14 @@
                                                 <asp:Button Text="Show Id" runat="server" CommandName="Id" CommandArgument="<%# Container.DataItemIndex %>" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField>
+                                      <%--  <asp:TemplateField>
                                              <HeaderTemplate>
                                              Show Admit Card
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                 <asp:Button Text="Show Admit Card" runat="server" CommandName="AdmitCard" CommandArgument="<%# Container.DataItemIndex %>" />
                                             </ItemTemplate>
-                                        </asp:TemplateField>
+                                        </asp:TemplateField>--%>
                                         <asp:BoundField DataField="CANDIDATENAME" HeaderText="CANDIDATENAME" />
                                         <asp:BoundField DataField="GenderName" HeaderText="GenderName" />
                                         <asp:BoundField DataField="CATEGORYNAME" HeaderText="CATEGORYNAME" />
