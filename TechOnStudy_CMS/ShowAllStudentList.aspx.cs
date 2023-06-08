@@ -112,27 +112,27 @@ namespace TechOnStudy_CMS
             //    Response.AddHeader("content-length", buffer.Length.ToString());
             //    Response.BinaryWrite(buffer);
             //}
-            //if (e.CommandName == "Id")
-            //{
-            //    int rowIndex = Convert.ToInt32(e.CommandArgument);
-            //    GridViewRow row = GridView1.Rows[rowIndex];
-            //    string userid = GridView1.DataKeys[rowIndex].Value.ToString();
-            //    //DataSet dt = new DataSet();
-            //    //dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
+            if (e.CommandName == "Id")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[rowIndex];
+                string userid = GridView1.DataKeys[rowIndex].Value.ToString();
+                //DataSet dt = new DataSet();
+                //dt = bl.GetDataSet("select * from [dbo].[VIEW_STUDENT_DATA] where id=" + userid);
 
-            //    //string Photos = dt.Tables[0].Rows[0]["IDPROOF"].ToString();
-            //    //string PhotoUrl = new Uri(Server.MapPath("~/Upload/IDPROOF/" + Photos)).AbsoluteUri;
+                //string Photos = dt.Tables[0].Rows[0]["IDPROOF"].ToString();
+                //string PhotoUrl = new Uri(Server.MapPath("~/Upload/IDPROOF/" + Photos)).AbsoluteUri;
 
-            //    Response.Redirect("ShowId.aspx?Id=" + userid);
+                Response.Redirect("ShowId.aspx?Id=" + userid);
 
-            //    //string fileExtention = Path.GetExtension(PhotoUrl);
-            //    //WebClient client = new WebClient();
-            //    //Byte[] buffer = client.DownloadData(PhotoUrl);
-            //    //Response.ContentType = ReturnExtension(fileExtention);
+                //string fileExtention = Path.GetExtension(PhotoUrl);
+                //WebClient client = new WebClient();
+                //Byte[] buffer = client.DownloadData(PhotoUrl);
+                //Response.ContentType = ReturnExtension(fileExtention);
 
-            //    //Response.AddHeader("content-length", buffer.Length.ToString());
-            //    //Response.BinaryWrite(buffer);
-            //}
+                //Response.AddHeader("content-length", buffer.Length.ToString());
+                //Response.BinaryWrite(buffer);
+            }
             //if (e.CommandName == "AdmitCard")
             //{
             //    int rowIndex = Convert.ToInt32(e.CommandArgument);

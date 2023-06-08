@@ -4,6 +4,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="assets/bootstrapa.min.css" rel="stylesheet" />
     <script src="assets/alertpop.js"></script>
+
+
+
+     <script type="text/javascript">
+         function previewFile() {
+             var preview = document.querySelector('#<%=imgph.ClientID %>');
+            var file = document.querySelector('#<%=file_photo.ClientID %>').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+        function previewFile1() {
+            var preview = document.querySelector('#<%=imgsig.ClientID %>');
+            var file = document.querySelector('#<%=file_signature.ClientID %>').files[0];
+             var reader = new FileReader();
+
+             reader.onloadend = function () {
+                 preview.src = reader.result;
+             }
+
+             if (file) {
+                 reader.readAsDataURL(file);
+             } else {
+                 preview.src = "";
+             }
+         }
+         function previewFile2() {
+             var preview = document.querySelector('#<%=imgid.ClientID %>');
+              var file = document.querySelector('#<%=file_id.ClientID %>').files[0];
+              var reader = new FileReader();
+
+              reader.onloadend = function () {
+                  preview.src = reader.result;
+              }
+
+              if (file) {
+                  reader.readAsDataURL(file);
+              } else {
+                  preview.src = "";
+              }
+          }
+     </script>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="UpdatePanel5" runat="server">
@@ -27,7 +79,7 @@
 
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">CANDIDATE NAME :*</label>
-                                                    <asp:TextBox ID="txtcandidatename" runat="server" placeholder="CANDIDATE NAME" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtcandidatename" runat="server" placeholder="CANDIDATE NAME" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Candidate Name Required" ControlToValidate="txtcandidatename" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
                                                 <!-- Text input-->
@@ -108,18 +160,18 @@
 
                                                 <div class="col-md-4 form-group">
                                                     <label class="control-label">FATHER'S NAME *</label>
-                                                    <asp:TextBox ID="txtfathername" runat="server" placeholder="FATHER'S NAME" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtfathername" runat="server" placeholder="FATHER'S NAME" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                 </div>
 
                                                 <div class="col-md-4 form-group">
                                                     <label class="control-label">OCCUPATION : *</label>
-                                                    <asp:TextBox ID="txtOCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtOCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="FATHER'S OCCUPATION Required" ControlToValidate="txtOCCUPATION" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
 
                                                 <div class="col-md-4 form-group">
                                                     <label class="control-label">MOTHER'S OCCUPATION : * </label>
-                                                    <asp:TextBox ID="txtmother_OCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtmother_OCCUPATION" runat="server" placeholder="OCCUPATION" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="MOTHER'S OCCUPATION Required" ControlToValidate="txtOCCUPATION" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </div>
 
@@ -131,7 +183,7 @@
                                             <div class="row">
                                                 <div class="col-md-12 form-group">
                                                     <label class="control-label">LINE 1 *</label>
-                                                    <asp:TextBox ID="txtPERMANENT_ADDRESS" runat="server" placeholder="PERMANENT ADDRESS" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPERMANENT_ADDRESS" runat="server" placeholder="PERMANENT ADDRESS" class="form-control" style='text-transform:uppercase'> </asp:TextBox>
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
@@ -180,7 +232,7 @@
 
                                                 <div class="col-md-12 form-group">
                                                     <label class="control-label">LINE 2 </label>
-                                                    <asp:TextBox ID="txtCOMMUNICATION_ADDRESS" runat="server" placeholder="COMMUNICATION ADDRESS" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCOMMUNICATION_ADDRESS" runat="server" placeholder="COMMUNICATION ADDRESS" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                 </div>
 
                                                 <div class="col-md-3 form-group">
@@ -332,7 +384,7 @@
 
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">NAME OF COLLEGE (WITH CITY)* </label>
-                                                    <asp:TextBox ID="txtcolllegename" runat="server" placeholder="NAME OF COLLEGE (WITH CITY)" class="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtcolllegename" runat="server" placeholder="NAME OF COLLEGE (WITH CITY)" class="form-control" style='text-transform:uppercase'></asp:TextBox>
                                                 </div>
 
 
@@ -364,18 +416,21 @@
                                             <div class="row">
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD PHOTO  *</label>
-                                                    <asp:FileUpload ID="file_photo" runat="server" />
+                                                    <asp:FileUpload ID="file_photo" runat="server"  onchange="previewFile()"/>
                                                     <asp:RequiredFieldValidator ID="rfvFileupload" runat="server" ErrorMessage="* PHOTO required" ControlToValidate="file_photo" ForeColor="Red" />
+                                                    <asp:Image ID="imgph" runat="server" Height="150px" ImageUrl="~/Upload/noimage.png" Width="150px" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD SIGNATURE  *</label>
-                                                    <asp:FileUpload ID="file_signature" runat="server" />
+                                                    <asp:FileUpload ID="file_signature" runat="server" onchange="previewFile1()" />
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* SIGNATURE required" ControlToValidate="file_signature" ForeColor="Red" />
+                                                     <asp:Image ID="imgsig" runat="server" Height="150px" ImageUrl="~/Upload/noimage.png" Width="150px" />
                                                 </div>
                                                 <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD ID PROOF : *</label>
-                                                    <asp:FileUpload ID="file_id" runat="server" />
+                                                    <asp:FileUpload ID="file_id" runat="server" onchange="previewFile2()" />
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* ID PROOF required" ControlToValidate="file_id" ForeColor="Red" />
+                                                     <asp:Image ID="imgid" runat="server" Height="150px" ImageUrl="~/Upload/noimage.png" Width="150px" />
                                                 </div>
                                                <%-- <div class="col-md-3 form-group">
                                                     <label class="control-label">UPLOAD UPSC ADMIT CARD : </label>

@@ -2495,6 +2495,7 @@
     <Content Include="Upload\ID\4c23d27f-dccc-4be6-ac7c-e52496e672fb.jpg" />
     <Content Include="Upload\ID\601aa712-a651-495c-bd72-3508f803d161.jpg" />
     <Content Include="Upload\ID\ddae8c94-2999-4122-99de-c28fb7d68e00.jpg" />
+    <Content Include="Upload\noimage.png" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>

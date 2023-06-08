@@ -176,7 +176,7 @@ namespace TechOnStudy_CMS
                             {
                                 File.Delete(Server.MapPath("~/Upload/ID/" + img_id));
                             }
-                            file_photo.SaveAs(Server.MapPath("~/Upload/ID/" + img_id));
+                            file_id.SaveAs(Server.MapPath("~/Upload/ID/" + img_id));
                         }
                     }
                     else
